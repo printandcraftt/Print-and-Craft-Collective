@@ -1,109 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Print and Craft Collective</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<title>Print and Craft Collective</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
 
-    header h1 {
-      font-size: 22px;
-    }
+header {
+  background: #111;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
 
-    .hero {
-      background: linear-gradient(to right, #000, #333);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
+.hero {
+  background: linear-gradient(to right, #000, #333);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
 
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+.btn {
+  background: white;
+  color: black;
+  padding: 10px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
 
-    .hero p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
+section {
+  padding: 60px 40px;
+}
 
-    .btn {
-      background: white;
-      color: black;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    section {
-      padding: 60px 40px;
-    }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
 
-    .products h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+.price {
+  font-weight: bold;
+  margin: 10px 0;
+}
 
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      text-align: center;
-    }
+.contact {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .contact {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    footer {
-      background: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 15px;
+  background: white;
+}
+</style>
 </head>
 
 <body>
@@ -117,47 +102,122 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero" id="home">
-  <h2>Print and Craft Collective</h2>
+  <h1>Print and Craft Collective</h1>
   <p>Beautiful prints and handmade crafts made with love</p>
   <a href="#products" class="btn">View Products</a>
 </div>
 
-<section class="products" id="products">
-  <h2>Our Products</h2>
+<!-- PRODUCTS -->
+<section id="products">
+<h2>Our Products</h2>
 
-  <div class="product-grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <h3>Polaroid Prints</h3>
-      <p>Customized polaroid-style prints perfect for memories.</p>
-      <a href="#contact" class="btn">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <h3>Fuzzywire Bouquet</h3>
-      <p>Handcrafted fuzzywire flowers made with care.</p>
-      <a href="#contact" class="btn">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <h3>Keychain Designs</h3>
-      <p>Custom keychains perfect for gifts and souvenirs.</p>
-      <a href="#contact" class="btn">Order Now</a>
-    </div>
+<div class="product-grid">
+  <div class="card">
+    <h3>Polaroid Prints</h3>
+    <p>Polaroid-style photo prints</p>
+    <a href="#polaroid" class="btn">View Choices</a>
   </div>
+
+  <div class="card">
+    <h3>Fuzzywire Bouquet</h3>
+    <p>Handcrafted fuzzywire flowers</p>
+    <a href="#fuzzywire" class="btn">View Choices</a>
+  </div>
+
+  <div class="card">
+    <h3>Keychain Designs</h3>
+    <p>Custom keychains for gifts</p>
+    <a href="#keychain" class="btn">View Choices</a>
+  </div>
+</div>
 </section>
 
+<!-- POLAROID PRINTS -->
+<section id="polaroid">
+<h2>Polaroid Prints</h2>
+
+<div class="product-grid">
+  <div class="card">
+    <h3>Set of 5</h3>
+    <p class="price">₱150</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Set of 10</h3>
+    <p class="price">₱280</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Set of 20</h3>
+    <p class="price">₱520</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+</div>
+</section>
+
+<!-- FUZZYWIRE -->
+<section id="fuzzywire">
+<h2>Fuzzywire Bouquet</h2>
+
+<div class="product-grid">
+  <div class="card">
+    <h3>Mini Bouquet</h3>
+    <p class="price">₱199</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Medium Bouquet</h3>
+    <p class="price">₱349</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Large Bouquet</h3>
+    <p class="price">₱499</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+</div>
+</section>
+
+<!-- KEYCHAIN -->
+<section id="keychain">
+<h2>Keychain Designs</h2>
+
+<div class="product-grid">
+  <div class="card">
+    <h3>Acrylic Keychain</h3>
+    <p class="price">₱99</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Photo Keychain</h3>
+    <p class="price">₱129</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Name Keychain</h3>
+    <p class="price">₱149</p>
+    <a href="#contact" class="btn">Order Now</a>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
 <div class="contact" id="contact">
-  <h2>Order Now</h2>
-  <p>Message us on Facebook or WhatsApp</p>
-  <a href="https://www.facebook.com/" target="_blank" class="btn">Contact Us</a>
+<h2>Order Now</h2>
+<p>Message us on Facebook to place your order</p>
+<a href="https://www.facebook.com/" target="_blank" class="btn">Contact Us</a>
 </div>
 
 <footer>
-  © 2026 Print and Craft Collective
+© 2026 Print and Craft Collective
 </footer>
 
 </body>
