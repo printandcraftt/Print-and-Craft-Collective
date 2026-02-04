@@ -113,17 +113,12 @@ h2 {
   width: 100%;
   border-radius: 15px;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* PRICE */
+/* PRICE LIST */
 .choice {
   border-top: 1px dashed #f2b8a0;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .price {
@@ -154,7 +149,7 @@ footer {
   font-size: 14px;
 }
 
-/* 🔍 IMAGE ZOOM OVERLAY */
+/* IMAGE ZOOM */
 .lightbox {
   display: none;
   position: fixed;
@@ -216,9 +211,13 @@ footer {
         <img src="photo_6053349425955934111_y.jpg" onclick="openLightbox(this)">
       </div>
 
-      <div class="choice">Set of 5 — <span class="price">₱150</span></div>
-      <div class="choice">Set of 10 — <span class="price">₱280</span></div>
-      <div class="choice">Set of 20 — <span class="price">₱520</span></div>
+      <div class="choice">📷 15 pcs — <span class="price">₱50</span></div>
+      <div class="choice">📷 30 pcs — <span class="price">₱95</span></div>
+      <div class="choice">📷 45 pcs — <span class="price">₱145</span></div>
+      <div class="choice">📷 60 pcs — <span class="price">₱195</span></div>
+      <div class="choice">📷 75 pcs — <span class="price">₱245</span></div>
+      <div class="choice">📷 90 pcs — <span class="price">₱295</span></div>
+      <div class="choice">📷 100 pcs — <span class="price">₱320</span></div>
 
       <a href="https://m.me/61579128398313" target="_blank" class="btn">
         Order via Messenger
@@ -276,7 +275,7 @@ Message Us on Messenger
 © 2026 Print and Craft Collective
 </footer>
 
-<!-- 🔍 LIGHTBOX -->
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <span>&times;</span>
   <img id="lightbox-img">
