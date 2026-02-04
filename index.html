@@ -3,11 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <title>Print and Craft Collective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #000, #333);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .contact {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Welcome to Print and Craft Collective</h1>
-  <p>Beautiful prints and handmade crafts made with love.</p>
+<header>
+  <h1>Print and Craft</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Print and Craft Collective</h2>
+  <p>Beautiful prints and handmade crafts made with love</p>
+  <a href="#" class="btn">View Products</a>
+</div>
+
+<section class="products">
+  <h2>Our Products</h2>
+
+  <div class="product-grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Customized Prints</h3>
+      <p>High-quality designs perfect for gifts.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Handmade Crafts</h3>
+      <p>Carefully crafted items made with love.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Event Souvenirs</h3>
+      <p>Perfect souvenirs for birthdays and events.</p>
+    </div>
+  </div>
+</section>
+
+<div class="contact">
+  <h2>Order Now</h2>
+  <p>Message us on Facebook or WhatsApp</p>
+  <a href="#" class="btn">Contact Us</a>
+</div>
+
+<footer>
+  © 2026 Print and Craft Collective
+</footer>
 
 </body>
 </html>
