@@ -27,7 +27,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 230, 220, 0.6);
+  background: rgba(255,230,220,0.6);
 }
 .hero-content {
   position: relative;
@@ -72,7 +72,11 @@ h2 { text-align: center; margin-bottom: 35px; }
   cursor: pointer;
 }
 
-.choices { display: none; text-align: left; margin-top: 15px; }
+.choices {
+  display: none;
+  margin-top: 15px;
+  text-align: left;
+}
 
 .gallery {
   display: grid;
@@ -168,6 +172,14 @@ h2 { text-align: center; margin-bottom: 35px; }
   <h3>Fuzzywire Bouquet</h3>
   <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
   <div class="choices" id="fuzzywire">
+
+    <div class="gallery">
+      <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
+      <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
+      <img src="627475240_122144702912970946_4662157742104378510_n.jpg" onclick="zoom(this)">
+      <img src="628210434_122144699558970946_5812332420657932667_n (1).jpg" onclick="zoom(this)">
+    </div>
+
     <div class="choice">Mini Bouquet — ₱199</div>
     <div class="choice">Medium Bouquet — ₱349</div>
     <div class="choice">Large Bouquet — ₱499</div>
