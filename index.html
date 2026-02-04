@@ -40,11 +40,9 @@ body {
 
 .hero-content h1 {
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 16px;
   background: rgba(255,255,255,0.85);
   padding: 10px 18px;
   border-radius: 20px;
@@ -82,7 +80,6 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* BUTTON */
 .btn {
   margin-top: 12px;
   padding: 10px 22px;
@@ -91,7 +88,6 @@ h2 {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 14px;
 }
 
 /* CHOICES */
@@ -101,12 +97,11 @@ h2 {
   text-align: left;
 }
 
-/* POLAROID GALLERY */
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-bottom: 15px;
 }
 
 .gallery img {
@@ -115,14 +110,10 @@ h2 {
   cursor: pointer;
 }
 
-/* PRICE LIST */
+/* PRICE */
 .choice {
   border-top: 1px dashed #f2b8a0;
   padding: 8px 0;
-}
-
-.price {
-  font-weight: bold;
 }
 
 /* CONTACT */
@@ -142,14 +133,7 @@ h2 {
   font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-
-/* IMAGE ZOOM */
+/* LIGHTBOX */
 .lightbox {
   display: none;
   position: fixed;
@@ -165,15 +149,6 @@ footer {
   max-height: 90%;
   border-radius: 15px;
 }
-
-.lightbox span {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
 </style>
 </head>
 
@@ -187,72 +162,35 @@ footer {
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section>
 <h2>Products</h2>
 
 <div class="products">
 
-  <!-- POLAROID PRINTS -->
+  <!-- POLAROID -->
   <div class="card">
-    <img src="polaroid.jpg" alt="Polaroid Prints">
+    <img src="polaroid.jpg">
     <h3>Polaroid Prints</h3>
-    <p>Polaroid-style photo prints</p>
     <button class="btn" onclick="toggle('polaroid')">View Choices</button>
 
     <div class="choices" id="polaroid">
-
       <div class="gallery">
-        <img src="photo_6053349425955934089_y.jpg" onclick="openLightbox(this)">
-        <img src="photo_6053349425955934094_y.jpg" onclick="openLightbox(this)">
-        <img src="photo_6053349425955934102_y.jpg" onclick="openLightbox(this)">
-        <img src="photo_6053349425955934105_y.jpg" onclick="openLightbox(this)">
-        <img src="photo_6053349425955934109_y.jpg" onclick="openLightbox(this)">
-        <img src="photo_6053349425955934111_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
+        <img src="photo_6053349425955934094_y.jpg" onclick="zoom(this)">
+        <img src="photo_6053349425955934102_y.jpg" onclick="zoom(this)">
+        <img src="photo_6053349425955934105_y.jpg" onclick="zoom(this)">
+        <img src="photo_6053349425955934109_y.jpg" onclick="zoom(this)">
+        <img src="photo_6053349425955934111_y.jpg" onclick="zoom(this)">
       </div>
 
-      <div class="choice">📷 15 pcs — <span class="price">₱50</span></div>
-      <div class="choice">📷 30 pcs — <span class="price">₱95</span></div>
-      <div class="choice">📷 45 pcs — <span class="price">₱145</span></div>
-      <div class="choice">📷 60 pcs — <span class="price">₱195</span></div>
-      <div class="choice">📷 75 pcs — <span class="price">₱245</span></div>
-      <div class="choice">📷 90 pcs — <span class="price">₱295</span></div>
-      <div class="choice">📷 100 pcs — <span class="price">₱320</span></div>
+      <div class="choice">📷 15 pcs — ₱50</div>
+      <div class="choice">📷 30 pcs — ₱95</div>
+      <div class="choice">📷 45 pcs — ₱145</div>
+      <div class="choice">📷 60 pcs — ₱195</div>
+      <div class="choice">📷 75 pcs — ₱245</div>
+      <div class="choice">📷 90 pcs — ₱295</div>
+      <div class="choice">📷 100 pcs — ₱320</div>
 
-      <a href="https://m.me/61579128398313" target="_blank" class="btn">
-        Order via Messenger
-      </a>
-    </div>
-  </div>
-
-  <!-- FUZZYWIRE -->
-  <div class="card">
-    <img src="fuzzywire.jpg">
-    <h3>Fuzzywire Bouquet</h3>
-    <p>Handcrafted fuzzywire flowers</p>
-    <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
-
-    <div class="choices" id="fuzzywire">
-      <div class="choice">Mini Bouquet — ₱199</div>
-      <div class="choice">Medium Bouquet — ₱349</div>
-      <div class="choice">Large Bouquet — ₱499</div>
-      <a href="https://m.me/61579128398313" target="_blank" class="btn">
-        Order via Messenger
-      </a>
-    </div>
-  </div>
-
-  <!-- KEYCHAIN -->
-  <div class="card">
-    <img src="keychain.jpg">
-    <h3>Keychain Designs</h3>
-    <p>Custom keychains for gifts</p>
-    <button class="btn" onclick="toggle('keychain')">View Choices</button>
-
-    <div class="choices" id="keychain">
-      <div class="choice">Acrylic — ₱99</div>
-      <div class="choice">Photo — ₱129</div>
-      <div class="choice">Name — ₱149</div>
       <a href="https://m.me/61579128398313" target="_blank" class="btn">
         Order via Messenger
       </a>
@@ -262,38 +200,26 @@ footer {
 </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact">
 <h2>Order Now</h2>
-<p>Message us on Messenger to place your order</p>
 <a href="https://m.me/61579128398313" target="_blank">
 Message Us on Messenger
 </a>
 </div>
 
-<footer>
-© 2026 Print and Craft Collective
-</footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span>&times;</span>
-  <img id="lightbox-img">
+<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+  <img id="zoomed">
 </div>
 
 <script>
 function toggle(id) {
-  const box = document.getElementById(id);
-  box.style.display = box.style.display === "block" ? "none" : "block";
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }
 
-function openLightbox(img) {
+function zoom(img) {
   document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+  document.getElementById("zoomed").src = img.src;
 }
 </script>
 
