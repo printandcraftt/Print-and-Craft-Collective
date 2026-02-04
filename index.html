@@ -82,14 +82,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-.card h3 {
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 14px;
-}
-
+/* BUTTON */
 .btn {
   margin-top: 12px;
   padding: 10px 22px;
@@ -119,9 +112,15 @@ h2 {
 .gallery img {
   width: 100%;
   border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-/* PRICE LIST */
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* PRICE */
 .choice {
   border-top: 1px dashed #f2b8a0;
   padding: 10px 0;
@@ -154,6 +153,32 @@ footer {
   padding: 15px;
   font-size: 14px;
 }
+
+/* 🔍 IMAGE ZOOM OVERLAY */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+.lightbox span {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -183,12 +208,12 @@ footer {
     <div class="choices" id="polaroid">
 
       <div class="gallery">
-        <img src="photo_6053349425955934089_y.jpg">
-        <img src="photo_6053349425955934094_y.jpg">
-        <img src="photo_6053349425955934102_y.jpg">
-        <img src="photo_6053349425955934105_y.jpg">
-        <img src="photo_6053349425955934109_y.jpg">
-        <img src="photo_6053349425955934111_y.jpg">
+        <img src="photo_6053349425955934089_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934094_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934102_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934105_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934109_y.jpg" onclick="openLightbox(this)">
+        <img src="photo_6053349425955934111_y.jpg" onclick="openLightbox(this)">
       </div>
 
       <div class="choice">Set of 5 — <span class="price">₱150</span></div>
@@ -203,7 +228,7 @@ footer {
 
   <!-- FUZZYWIRE -->
   <div class="card">
-    <img src="fuzzywire.jpg" alt="Fuzzywire Bouquet">
+    <img src="fuzzywire.jpg">
     <h3>Fuzzywire Bouquet</h3>
     <p>Handcrafted fuzzywire flowers</p>
     <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
@@ -220,7 +245,7 @@ footer {
 
   <!-- KEYCHAIN -->
   <div class="card">
-    <img src="keychain.jpg" alt="Keychain Designs">
+    <img src="keychain.jpg">
     <h3>Keychain Designs</h3>
     <p>Custom keychains for gifts</p>
     <button class="btn" onclick="toggle('keychain')">View Choices</button>
@@ -251,10 +276,25 @@ Message Us on Messenger
 © 2026 Print and Craft Collective
 </footer>
 
+<!-- 🔍 LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span>&times;</span>
+  <img id="lightbox-img">
+</div>
+
 <script>
 function toggle(id) {
   const box = document.getElementById(id);
   box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function openLightbox(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
