@@ -8,15 +8,15 @@
 <style>
 body {
   margin: 0;
-  font-family: "Georgia", serif;
-  background: #f6f1eb;
-  color: #333;
+  font-family: "Poppins", sans-serif;
+  background: #fff5f0;
+  color: #5a4a42;
 }
 
 /* HERO */
 .hero {
   height: 90vh;
-  background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac");
+  background-image: url("hero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -29,13 +29,12 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(255, 230, 220, 0.6);
 }
 
 .hero-content {
   position: relative;
   text-align: center;
-  color: white;
   padding: 20px;
 }
 
@@ -46,10 +45,9 @@ body {
 
 .hero-content p {
   font-size: 16px;
-  background: rgba(0,0,0,0.45);
+  background: rgba(255,255,255,0.85);
   padding: 10px 18px;
-  border-radius: 12px;
-  display: inline-block;
+  border-radius: 20px;
 }
 
 /* SECTION */
@@ -72,14 +70,20 @@ h2 {
 
 .card {
   background: white;
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 25px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
 .card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .card p {
@@ -87,17 +91,17 @@ h2 {
 }
 
 .btn {
-  margin-top: 15px;
+  margin-top: 12px;
   padding: 10px 22px;
-  border-radius: 20px;
-  background: #333;
+  border-radius: 25px;
+  background: #f2b8a0;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 14px;
 }
 
-/* CHOICES (HIDDEN) */
+/* CHOICES */
 .choices {
   display: none;
   margin-top: 15px;
@@ -105,9 +109,8 @@ h2 {
 }
 
 .choice {
-  border-top: 1px solid #eee;
+  border-top: 1px dashed #f2b8a0;
   padding: 10px 0;
-  font-size: 14px;
 }
 
 .price {
@@ -116,7 +119,7 @@ h2 {
 
 /* CONTACT */
 .contact {
-  background: #333;
+  background: #f2b8a0;
   color: white;
   text-align: center;
   padding: 50px 20px;
@@ -124,12 +127,11 @@ h2 {
 
 .contact a {
   background: white;
-  color: black;
-  padding: 10px 25px;
-  border-radius: 20px;
+  color: #f2b8a0;
+  padding: 12px 28px;
+  border-radius: 25px;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 15px;
+  font-weight: bold;
 }
 
 /* FOOTER */
@@ -159,6 +161,7 @@ footer {
 
   <!-- POLAROID -->
   <div class="card">
+    <img src="polaroid.jpg" alt="Polaroid Prints">
     <h3>Polaroid Prints</h3>
     <p>Polaroid-style photo prints</p>
     <button class="btn" onclick="toggle('polaroid')">View Choices</button>
@@ -167,12 +170,15 @@ footer {
       <div class="choice">Set of 5 — <span class="price">₱150</span></div>
       <div class="choice">Set of 10 — <span class="price">₱280</span></div>
       <div class="choice">Set of 20 — <span class="price">₱520</span></div>
-      <a href="#contact" class="btn">Order Now</a>
+      <a href="https://m.me/61579128398313" target="_blank" class="btn">
+        Order via Messenger
+      </a>
     </div>
   </div>
 
   <!-- FUZZYWIRE -->
   <div class="card">
+    <img src="fuzzywire.jpg" alt="Fuzzywire Bouquet">
     <h3>Fuzzywire Bouquet</h3>
     <p>Handcrafted fuzzywire flowers</p>
     <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
@@ -181,21 +187,26 @@ footer {
       <div class="choice">Mini Bouquet — <span class="price">₱199</span></div>
       <div class="choice">Medium Bouquet — <span class="price">₱349</span></div>
       <div class="choice">Large Bouquet — <span class="price">₱499</span></div>
-      <a href="#contact" class="btn">Order Now</a>
+      <a href="https://m.me/61579128398313" target="_blank" class="btn">
+        Order via Messenger
+      </a>
     </div>
   </div>
 
   <!-- KEYCHAIN -->
   <div class="card">
+    <img src="keychain.jpg" alt="Keychain Designs">
     <h3>Keychain Designs</h3>
     <p>Custom keychains for gifts</p>
     <button class="btn" onclick="toggle('keychain')">View Choices</button>
 
     <div class="choices" id="keychain">
-      <div class="choice">Acrylic Keychain — <span class="price">₱99</span></div>
-      <div class="choice">Photo Keychain — <span class="price">₱129</span></div>
-      <div class="choice">Name Keychain — <span class="price">₱149</span></div>
-      <a href="#contact" class="btn">Order Now</a>
+      <div class="choice">Acrylic — <span class="price">₱99</span></div>
+      <div class="choice">Photo — <span class="price">₱129</span></div>
+      <div class="choice">Name — <span class="price">₱149</span></div>
+      <a href="https://m.me/61579128398313" target="_blank" class="btn">
+        Order via Messenger
+      </a>
     </div>
   </div>
 
@@ -205,8 +216,10 @@ footer {
 <!-- CONTACT -->
 <div class="contact" id="contact">
 <h2>Order Now</h2>
-<p>Message us on Facebook to place your order</p>
-<a href="https://www.facebook.com/" target="_blank">Contact Us</a>
+<p>Message us on Messenger to place your order</p>
+<a href="https://m.me/61579128398313" target="_blank">
+Message Us on Messenger
+</a>
 </div>
 
 <footer>
