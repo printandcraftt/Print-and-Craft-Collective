@@ -132,6 +132,8 @@ h2{text-align:center;margin-bottom:35px;}
   border-radius:25px;
   text-decoration:none;
   font-weight:bold;
+  display:inline-block;
+  margin:6px 0;
 }
 
 /* LIGHTBOX */
@@ -173,6 +175,7 @@ h2{text-align:center;margin-bottom:35px;}
   <img src="polaroid.jpg">
   <h3>Polaroid Prints</h3>
   <button class="btn" onclick="toggle('polaroid')">View Choices</button>
+
   <div class="choices" id="polaroid">
     <div class="gallery">
       <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -223,10 +226,7 @@ h2{text-align:center;margin-bottom:35px;}
 
     <div class="choice">📦 45 Polaroid Prints + Box — ₱145 only</div>
 
-    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20order%20Polaroid%20with%20Box%20Set%20💕"
-       target="_blank">
-       Order via Messenger
-    </a>
+    <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
 </div>
 
@@ -236,6 +236,7 @@ h2{text-align:center;margin-bottom:35px;}
   <img src="fuzzywire.jpg">
   <h3>Fuzzywire Bouquet</h3>
   <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
+
   <div class="choices" id="fuzzywire">
     <div class="gallery">
       <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
@@ -255,6 +256,7 @@ h2{text-align:center;margin-bottom:35px;}
   <img src="keychain.jpg">
   <h3>Keychain Designs</h3>
   <button class="btn" onclick="toggle('keychain')">View Choices</button>
+
   <div class="choices" id="keychain">
     <div class="gallery">
       <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
@@ -272,11 +274,22 @@ h2{text-align:center;margin-bottom:35px;}
 </div>
 </section>
 
+<!-- CONTACT -->
 <div class="contact">
-<h2>Order Now</h2>
-<a href="https://m.me/61579128398313" target="_blank">Message Us on Messenger</a>
+  <h2>Order Now</h2>
+
+  <a href="https://m.me/61579128398313" target="_blank">💬 Message Us on Messenger</a>
+
+  <a href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">
+    👤 Visit Our Facebook Account
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">
+    📘 Visit Our Facebook Page
+  </a>
 </div>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
   <img id="zoomed">
 </div>
