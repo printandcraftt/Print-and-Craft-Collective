@@ -67,8 +67,21 @@ h2{text-align:center;margin-bottom:35px;}
   font-size:12px;
   font-weight:bold;
 }
+
+/* NEW badge */
 .new{
   background:#cfa7e3;
+}
+
+/* BEST SELLER ANIMATION (FREE) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.badge:not(.new){
+  animation:pulse 1.5s infinite;
 }
 
 /* BUTTON */
