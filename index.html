@@ -16,17 +16,39 @@ h2{text-align:center;margin-bottom:35px;}
 
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
 
-.card{background:#fff;border-radius:25px;padding:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.08);position:relative;}
-.card img{width:100%;border-radius:20px;margin-bottom:15px;}
+.card{background:#fff;border-radius:25px;padding:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.08);position:relative;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
 
-.product-desc{font-size:14px;color:#7a6a60;margin:8px 0 12px;}
+.card img{width:100%;border-radius:20px;margin-bottom:15px;
+  transition:transform .35s ease;
+}
+.card img:hover,
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+.product-desc{font-size:14px;color:#7a6a60;margin:8px 0 12px;line-height:1.5;}
 
 .badge{position:absolute;top:15px;left:15px;background:#f2b8a0;color:white;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:bold;}
 .new{background:#cfa7e3;}
+
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
 .badge:not(.new){animation:pulse 1.5s infinite;}
 
-.btn{padding:12px 26px;border-radius:30px;background:#f2b8a0;color:white;border:none;cursor:pointer;text-decoration:none;display:inline-block;font-weight:600;}
+.btn{padding:12px 26px;border-radius:30px;background:#f2b8a0;color:white;border:none;cursor:pointer;text-decoration:none;display:inline-block;font-weight:600;
+  transition:all .3s ease;
+}
+.btn:hover{
+  background:#f4a98c;
+  box-shadow:0 12px 30px rgba(242,184,160,.6);
+  transform:translateY(-3px);
+}
+
 .choices{display:none;margin-top:15px;text-align:left;}
 
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px;}
@@ -41,6 +63,14 @@ h2{text-align:center;margin-bottom:35px;}
 
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:999;}
 .lightbox img{max-width:90%;max-height:90%;border-radius:15px;}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.card{animation:fadeUp .8s ease both;}
+
+section{background:linear-gradient(to bottom,#fff5f0,#ffffff);}
 </style>
 </head>
 
@@ -85,7 +115,7 @@ High-quality Polaroid prints with a classic look—ideal for gifts, decor, or me
 
 <!-- POLAROID BOX SET -->
 <div class="card">
-<div class="badge">Best Seller</div>
+<div class="badge new">New</div>
 <img src="polaroid_boxset.jpg">
 <h3>Polaroid with Box Set</h3>
 <p class="product-desc">
