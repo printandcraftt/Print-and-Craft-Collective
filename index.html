@@ -13,7 +13,6 @@ body{
   color:#5a4a42;
 }
 
-/* HERO */
 .hero{
   height:80vh;
   background:linear-gradient(135deg,#fde2d8,#f7c7b5);
@@ -29,11 +28,9 @@ body{
   border-radius:20px;
 }
 
-/* SECTION */
 section{padding:60px 25px;}
 h2{text-align:center;margin-bottom:35px;}
 
-/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -62,7 +59,6 @@ h2{text-align:center;margin-bottom:35px;}
   margin:8px 0 12px;
 }
 
-/* BADGES */
 .badge{
   position:absolute;
   top:15px;
@@ -75,17 +71,15 @@ h2{text-align:center;margin-bottom:35px;}
   font-weight:bold;
 }
 
-.new{ background:#cfa7e3; }
+.new{background:#cfa7e3;}
 
-/* BEST SELLER ANIMATION */
 @keyframes pulse{
   0%{transform:scale(1)}
   50%{transform:scale(1.1)}
   100%{transform:scale(1)}
 }
-.badge:not(.new){ animation:pulse 1.5s infinite; }
+.badge:not(.new){animation:pulse 1.5s infinite;}
 
-/* BUTTON */
 .btn{
   padding:12px 26px;
   border-radius:30px;
@@ -98,14 +92,8 @@ h2{text-align:center;margin-bottom:35px;}
   font-weight:600;
 }
 
-/* CHOICES */
-.choices{
-  display:none;
-  margin-top:15px;
-  text-align:left;
-}
+.choices{display:none;margin-top:15px;text-align:left;}
 
-/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -118,14 +106,12 @@ h2{text-align:center;margin-bottom:35px;}
   cursor:pointer;
 }
 
-/* PRICE */
 .choice{
   border-top:1px dashed #f2b8a0;
   padding:8px 0;
   font-weight:bold;
 }
 
-/* CONTACT */
 .contact{
   background:#f2b8a0;
   color:white;
@@ -140,7 +126,6 @@ h2{text-align:center;margin-bottom:35px;}
   width:280px;
 }
 
-/* FLOATING MESSENGER */
 .messenger-float{
   position:fixed;
   bottom:20px;
@@ -155,7 +140,6 @@ h2{text-align:center;margin-bottom:35px;}
   z-index:1000;
 }
 
-/* LIGHTBOX */
 .lightbox{
   display:none;
   position:fixed;
@@ -194,7 +178,6 @@ h2{text-align:center;margin-bottom:35px;}
   <img src="polaroid.jpg">
   <h3>Polaroid Prints</h3>
 
-  <!-- ✅ DESCRIPTION ADDED -->
   <p class="product-desc">
     High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.
   </p>
@@ -214,10 +197,6 @@ h2{text-align:center;margin-bottom:35px;}
     <div class="choice">📷 15 pcs — ₱50</div>
     <div class="choice">📷 30 pcs — ₱95</div>
     <div class="choice">📷 45 pcs — ₱145</div>
-    <div class="choice">📷 60 pcs — ₱195</div>
-    <div class="choice">📷 75 pcs — ₱245</div>
-    <div class="choice">📷 90 pcs — ₱295</div>
-    <div class="choice">📷 100 pcs — ₱320</div>
 
     <a class="btn"
        href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20Prints%20💕"
@@ -227,7 +206,77 @@ h2{text-align:center;margin-bottom:35px;}
   </div>
 </div>
 
-<!-- (ALL OTHER PRODUCTS CONTINUE UNCHANGED BELOW) -->
+<!-- POLAROID BOX SET -->
+<div class="card">
+  <div class="badge">Best Seller</div>
+  <img src="polaroid_boxset.jpg">
+  <h3>Polaroid with Box Set</h3>
+
+  <button class="btn" onclick="toggle('boxset')">View Choices</button>
+
+  <div class="choices" id="boxset">
+    <div class="gallery">
+      <img src="photo_6053349425955934203_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934204_y.jpg" onclick="zoom(this)">
+    </div>
+
+    <div class="choice">📦 45 Polaroid + Box — ₱145</div>
+
+    <a class="btn"
+       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20with%20Box%20Set%20💕"
+       target="_blank">
+       Order via Messenger
+    </a>
+  </div>
+</div>
+
+<!-- FUZZYWIRE -->
+<div class="card">
+  <div class="badge new">New</div>
+  <img src="fuzzywire.jpg">
+  <h3>Fuzzywire Bouquet</h3>
+
+  <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
+
+  <div class="choices" id="fuzzywire">
+    <div class="gallery">
+      <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
+      <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
+    </div>
+
+    <div class="choice">💐 ₱280 – ₱400</div>
+
+    <a class="btn"
+       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20a%20Fuzzywire%20Bouquet%20💐"
+       target="_blank">
+       Order via Messenger
+    </a>
+  </div>
+</div>
+
+<!-- KEYCHAIN -->
+<div class="card">
+  <div class="badge">Best Seller</div>
+  <img src="keychain.jpg">
+  <h3>Keychain Designs</h3>
+
+  <button class="btn" onclick="toggle('keychain')">View Choices</button>
+
+  <div class="choices" id="keychain">
+    <div class="gallery">
+      <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934240_y.jpg" onclick="zoom(this)">
+    </div>
+
+    <div class="choice">🔑 ₱20 – ₱35</div>
+
+    <a class="btn"
+       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Keychain%20Designs%20🔑"
+       target="_blank">
+       Order via Messenger
+    </a>
+  </div>
+</div>
 
 </div>
 </section>
@@ -235,26 +284,13 @@ h2{text-align:center;margin-bottom:35px;}
 <!-- CONTACT -->
 <div class="contact">
   <h2>Order Now</h2>
-
-  <a class="btn" href="https://m.me/61579128398313" target="_blank">
-    Message Us on Messenger
-  </a><br>
-
-  <a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">
-    Visit Our Facebook Page
-  </a><br>
-
-  <a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">
-    Visit Our Facebook Account
-  </a>
+  <a class="btn" href="https://m.me/61579128398313" target="_blank">Message Us on Messenger</a><br>
+  <a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">Visit Our Facebook Page</a><br>
+  <a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">Visit Our Facebook Account</a>
 </div>
 
-<!-- FLOATING MESSENGER -->
-<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">
-  💬 Chat with Us
-</a>
+<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
   <img id="zoomed">
 </div>
