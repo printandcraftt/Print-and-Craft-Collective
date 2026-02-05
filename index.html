@@ -68,7 +68,6 @@ h2{text-align:center;margin-bottom:35px;}
   font-weight:bold;
 }
 
-/* NEW badge */
 .new{ background:#cfa7e3; }
 
 /* BEST SELLER ANIMATION */
@@ -81,14 +80,15 @@ h2{text-align:center;margin-bottom:35px;}
 
 /* BUTTON */
 .btn{
-  padding:10px 22px;
-  border-radius:25px;
+  padding:12px 26px;
+  border-radius:30px;
   background:#f2b8a0;
   color:white;
   border:none;
   cursor:pointer;
   text-decoration:none;
   display:inline-block;
+  font-weight:600;
 }
 
 /* CHOICES */
@@ -123,29 +123,14 @@ h2{text-align:center;margin-bottom:35px;}
   background:#f2b8a0;
   color:white;
   text-align:center;
-  padding:50px 20px;
+  padding:55px 20px;
 }
 
-/* ICON BUTTONS */
-.social-icons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  margin-top:20px;
-}
-
-.social-icons a{
-  width:55px;
-  height:55px;
+.contact .btn{
   background:white;
   color:#f2b8a0;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  text-decoration:none;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  margin:8px 0;
+  width:280px;
 }
 
 /* FLOATING MESSENGER */
@@ -153,17 +138,13 @@ h2{text-align:center;margin-bottom:35px;}
   position:fixed;
   bottom:20px;
   right:20px;
-  width:60px;
-  height:60px;
-  background:#0084ff;
+  background:#f2b8a0;
   color:white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
+  padding:14px 22px;
+  border-radius:30px;
   text-decoration:none;
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
   z-index:1000;
 }
 
@@ -215,6 +196,7 @@ h2{text-align:center;margin-bottom:35px;}
       <img src="photo_6053349425955934109_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934111_y.jpg" onclick="zoom(this)">
     </div>
+
     <div class="choice">📷 15 pcs — ₱50</div>
     <div class="choice">📷 30 pcs — ₱95</div>
     <div class="choice">📷 45 pcs — ₱145</div>
@@ -222,11 +204,12 @@ h2{text-align:center;margin-bottom:35px;}
     <div class="choice">📷 75 pcs — ₱245</div>
     <div class="choice">📷 90 pcs — ₱295</div>
     <div class="choice">📷 100 pcs — ₱320</div>
+
     <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
 </div>
 
-<!-- POLAROID BOX SET -->
+<!-- POLAROID WITH BOX SET -->
 <div class="card">
   <div class="badge">Best Seller</div>
   <img src="polaroid_boxset.jpg">
@@ -239,6 +222,7 @@ h2{text-align:center;margin-bottom:35px;}
       <img src="photo_6053349425955934205_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934206_y.jpg" onclick="zoom(this)">
     </div>
+
     <div class="choice">📦 45 Polaroid Prints + Box — ₱145 only</div>
     <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
@@ -254,7 +238,10 @@ h2{text-align:center;margin-bottom:35px;}
     <div class="gallery">
       <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
       <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
+      <img src="627475240_122144702912970946_4662157742104378510_n.jpg" onclick="zoom(this)">
+      <img src="628210434_122144699558970946_5812332420657932667_n (1).jpg" onclick="zoom(this)">
     </div>
+
     <div class="choice">💐 Price Range — ₱280 – ₱400</div>
     <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
@@ -270,7 +257,11 @@ h2{text-align:center;margin-bottom:35px;}
     <div class="gallery">
       <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934240_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934241_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934242_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934243_y.jpg" onclick="zoom(this)">
     </div>
+
     <div class="choice">🔑 Price Range — ₱20 – ₱35</div>
     <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
@@ -283,14 +274,23 @@ h2{text-align:center;margin-bottom:35px;}
 <div class="contact">
   <h2>Order Now</h2>
 
-  <div class="social-icons">
-    <a href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">👤</a>
-    <a href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">📘</a>
-  </div>
+  <a class="btn" href="https://m.me/61579128398313" target="_blank">
+    Message Us on Messenger
+  </a><br>
+
+  <a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">
+    Visit Our Facebook Page
+  </a><br>
+
+  <a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">
+    Visit Our Facebook Account
+  </a>
 </div>
 
 <!-- FLOATING MESSENGER -->
-<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬</a>
+<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">
+  💬 Chat with Us
+</a>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
