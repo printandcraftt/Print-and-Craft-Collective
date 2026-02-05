@@ -13,7 +13,7 @@ body {
   color: #5a4a42;
 }
 
-/* HERO – old pastel design */
+/* HERO */
 .hero {
   height: 80vh;
   background: linear-gradient(135deg, #fde2d8, #f7c7b5);
@@ -24,12 +24,10 @@ body {
 
 .hero-content {
   text-align: center;
-  padding: 20px;
 }
 
 .hero-content h1 {
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .hero-content p {
@@ -39,14 +37,8 @@ body {
 }
 
 /* SECTIONS */
-section {
-  padding: 60px 25px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 35px;
-}
+section { padding: 60px 25px; }
+h2 { text-align: center; margin-bottom: 35px; }
 
 /* PRODUCTS */
 .products {
@@ -88,7 +80,7 @@ h2 {
   text-align: left;
 }
 
-/* GALLERIES */
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -161,12 +153,11 @@ h2 {
 
 <div class="products">
 
-<!-- POLAROID PRINTS -->
+<!-- POLAROID -->
 <div class="card">
   <img src="polaroid.jpg">
   <h3>Polaroid Prints</h3>
   <button class="btn" onclick="toggle('polaroid')">View Choices</button>
-
   <div class="choices" id="polaroid">
     <div class="gallery">
       <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -193,77 +184,7 @@ h2 {
   </div>
 </div>
 
-<!-- FUZZYWIRE BOUQUET -->
+<!-- FUZZYWIRE -->
 <div class="card">
   <img src="fuzzywire.jpg">
   <h3>Fuzzywire Bouquet</h3>
-  <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
-
-  <div class="choices" id="fuzzywire">
-    <div class="gallery">
-      <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
-      <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
-      <img src="627475240_122144702912970946_4662157742104378510_n.jpg" onclick="zoom(this)">
-      <img src="628210434_122144699558970946_5812332420657932667_n (1).jpg" onclick="zoom(this)">
-    </div>
-
-    <div class="choice">💐 Price Range — ₱280 – ₱400</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20order%20a%20Fuzzywire%20Bouquet%20💕"
-       target="_blank">
-       Order via Messenger
-    </a>
-  </div>
-</div>
-
-<!-- KEYCHAIN DESIGNS -->
-<div class="card">
-  <img src="keychain.jpg">
-  <h3>Keychain Designs</h3>
-  <button class="btn" onclick="toggle('keychain')">View Choices</button>
-
-  <div class="choices" id="keychain">
-    <div class="choice">Acrylic — ₱99</div>
-    <div class="choice">Photo — ₱129</div>
-    <div class="choice">Name — ₱149</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20order%20Keychain%20Designs%20💕"
-       target="_blank">
-       Order via Messenger
-    </a>
-  </div>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact">
-<h2>Order Now</h2>
-<a href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20place%20an%20order%20from%20Print%20and%20Crafts%20💕"
-   target="_blank">
-   Message Us on Messenger
-</a>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-  <img id="zoomed">
-</div>
-
-<script>
-function toggle(id) {
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
-}
-
-function zoom(img) {
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("zoomed").src = img.src;
-}
-</script>
-
-</body>
-</html>
