@@ -12,7 +12,6 @@ body{
   background:#fff5f0;
   color:#5a4a42;
 }
-
 .hero{
   height:80vh;
   background:linear-gradient(135deg,#fde2d8,#f7c7b5);
@@ -27,16 +26,13 @@ body{
   padding:10px 18px;
   border-radius:20px;
 }
-
 section{padding:60px 25px;}
 h2{text-align:center;margin-bottom:35px;}
-
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
-
 .card{
   background:#fff;
   border-radius:25px;
@@ -45,7 +41,6 @@ h2{text-align:center;margin-bottom:35px;}
   box-shadow:0 10px 25px rgba(0,0,0,.08);
   position:relative;
 }
-
 .card img{
   width:100%;
   border-radius:20px;
@@ -70,16 +65,13 @@ h2{text-align:center;margin-bottom:35px;}
   font-size:12px;
   font-weight:bold;
 }
-
 .new{background:#cfa7e3;}
-
 @keyframes pulse{
   0%{transform:scale(1)}
   50%{transform:scale(1.1)}
   100%{transform:scale(1)}
 }
 .badge:not(.new){animation:pulse 1.5s infinite;}
-
 .btn{
   padding:12px 26px;
   border-radius:30px;
@@ -91,9 +83,7 @@ h2{text-align:center;margin-bottom:35px;}
   display:inline-block;
   font-weight:600;
 }
-
 .choices{display:none;margin-top:15px;text-align:left;}
-
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -105,27 +95,23 @@ h2{text-align:center;margin-bottom:35px;}
   border-radius:15px;
   cursor:pointer;
 }
-
 .choice{
   border-top:1px dashed #f2b8a0;
   padding:8px 0;
   font-weight:bold;
 }
-
 .contact{
   background:#f2b8a0;
   color:white;
   text-align:center;
   padding:55px 20px;
 }
-
 .contact .btn{
   background:white;
   color:#f2b8a0;
   margin:8px 0;
   width:280px;
 }
-
 .messenger-float{
   position:fixed;
   bottom:20px;
@@ -139,7 +125,6 @@ h2{text-align:center;margin-bottom:35px;}
   box-shadow:0 8px 20px rgba(0,0,0,.25);
   z-index:1000;
 }
-
 .lightbox{
   display:none;
   position:fixed;
@@ -159,7 +144,6 @@ h2{text-align:center;margin-bottom:35px;}
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
     <h1>Print and Crafts</h1>
@@ -177,13 +161,10 @@ h2{text-align:center;margin-bottom:35px;}
   <div class="badge">Best Seller</div>
   <img src="polaroid.jpg">
   <h3>Polaroid Prints</h3>
-
   <p class="product-desc">
     High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.
   </p>
-
   <button class="btn" onclick="toggle('polaroid')">View Choices</button>
-
   <div class="choices" id="polaroid">
     <div class="gallery">
       <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -193,15 +174,11 @@ h2{text-align:center;margin-bottom:35px;}
       <img src="photo_6053349425955934109_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934111_y.jpg" onclick="zoom(this)">
     </div>
-
     <div class="choice">📷 15 pcs — ₱50</div>
     <div class="choice">📷 30 pcs — ₱95</div>
     <div class="choice">📷 45 pcs — ₱145</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20Prints%20💕"
-       target="_blank">
-       Order via Messenger
+    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20Prints%20💕" target="_blank">
+      Order via Messenger
     </a>
   </div>
 </div>
@@ -211,21 +188,18 @@ h2{text-align:center;margin-bottom:35px;}
   <div class="badge">Best Seller</div>
   <img src="polaroid_boxset.jpg">
   <h3>Polaroid with Box Set</h3>
-
+  <p class="product-desc">
+    Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.
+  </p>
   <button class="btn" onclick="toggle('boxset')">View Choices</button>
-
   <div class="choices" id="boxset">
     <div class="gallery">
       <img src="photo_6053349425955934203_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934204_y.jpg" onclick="zoom(this)">
     </div>
-
     <div class="choice">📦 45 Polaroid + Box — ₱145</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20with%20Box%20Set%20💕"
-       target="_blank">
-       Order via Messenger
+    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Polaroid%20with%20Box%20Set%20💕" target="_blank">
+      Order via Messenger
     </a>
   </div>
 </div>
@@ -235,21 +209,18 @@ h2{text-align:center;margin-bottom:35px;}
   <div class="badge new">New</div>
   <img src="fuzzywire.jpg">
   <h3>Fuzzywire Bouquet</h3>
-
+  <p class="product-desc">
+    Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.
+  </p>
   <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
-
   <div class="choices" id="fuzzywire">
     <div class="gallery">
       <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
       <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
     </div>
-
     <div class="choice">💐 ₱280 – ₱400</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20a%20Fuzzywire%20Bouquet%20💐"
-       target="_blank">
-       Order via Messenger
+    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20a%20Fuzzywire%20Bouquet%20💐" target="_blank">
+      Order via Messenger
     </a>
   </div>
 </div>
@@ -260,20 +231,20 @@ h2{text-align:center;margin-bottom:35px;}
   <img src="keychain.jpg">
   <h3>Keychain Designs</h3>
 
-  <button class="btn" onclick="toggle('keychain')">View Choices</button>
+  <!-- ✅ DESCRIPTION ADDED HERE -->
+  <p class="product-desc">
+    Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.
+  </p>
 
+  <button class="btn" onclick="toggle('keychain')">View Choices</button>
   <div class="choices" id="keychain">
     <div class="gallery">
       <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
       <img src="photo_6053349425955934240_y.jpg" onclick="zoom(this)">
     </div>
-
     <div class="choice">🔑 ₱20 – ₱35</div>
-
-    <a class="btn"
-       href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Keychain%20Designs%20🔑"
-       target="_blank">
-       Order via Messenger
+    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20am%20interested%20in%20Keychain%20Designs%20🔑" target="_blank">
+      Order via Messenger
     </a>
   </div>
 </div>
@@ -281,7 +252,6 @@ h2{text-align:center;margin-bottom:35px;}
 </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact">
   <h2>Order Now</h2>
   <a class="btn" href="https://m.me/61579128398313" target="_blank">Message Us on Messenger</a><br>
@@ -298,11 +268,11 @@ h2{text-align:center;margin-bottom:35px;}
 <script>
 function toggle(id){
   const el=document.getElementById(id);
-  el.style.display=el.style.display==="block"?"none":"block";
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }
 function zoom(img){
   document.getElementById("lightbox").style.display="flex";
-  document.getElementById("zoomed").src=img.src;
+  document.getElementById("zoomed").src = img.src;
 }
 </script>
 
