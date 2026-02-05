@@ -69,20 +69,15 @@ h2{text-align:center;margin-bottom:35px;}
 }
 
 /* NEW badge */
-.new{
-  background:#cfa7e3;
-}
+.new{ background:#cfa7e3; }
 
 /* BEST SELLER ANIMATION */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1)}
 }
-
-.badge:not(.new){
-  animation:pulse 1.5s infinite;
-}
+.badge:not(.new){ animation:pulse 1.5s infinite; }
 
 /* BUTTON */
 .btn{
@@ -167,19 +162,17 @@ h2{text-align:center;margin-bottom:35px;}
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section>
 <h2>Products</h2>
 
 <div class="products">
 
-<!-- POLAROID PRINTS (BEST SELLER) -->
+<!-- POLAROID PRINTS -->
 <div class="card">
   <div class="badge">Best Seller</div>
   <img src="polaroid.jpg">
   <h3>Polaroid Prints</h3>
   <button class="btn" onclick="toggle('polaroid')">View Choices</button>
-
   <div class="choices" id="polaroid">
     <div class="gallery">
       <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -198,32 +191,51 @@ h2{text-align:center;margin-bottom:35px;}
     <div class="choice">📷 90 pcs — ₱295</div>
     <div class="choice">📷 100 pcs — ₱320</div>
 
-    <a class="btn" href="https://m.me/61579128398313" target="_blank">
-      Order via Messenger
-    </a>
+    <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
 </div>
 
-<!-- POLAROID WITH BOX SET (NEW PRODUCT) -->
+<!-- POLAROID WITH BOX SET -->
 <div class="card">
   <div class="badge">Best Seller</div>
   <img src="polaroid_boxset.jpg">
   <h3>Polaroid with Box Set</h3>
+  <button class="btn" onclick="toggle('boxset')">View Choices</button>
 
-  <div class="choice">📦 Includes Polaroid Prints + Box</div>
+  <div class="choices" id="boxset">
+    <div class="gallery">
+      <img src="photo_6053349425955934203_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934204_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934205_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934206_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934207_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934210_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934215_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934218_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934219_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934221_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934226_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934230_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934231_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934234_y.jpg" onclick="zoom(this)">
+      <img src="photo_6053349425955934239_y.jpg" onclick="zoom(this)">
+    </div>
 
-  <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20order%20Polaroid%20with%20Box%20Set%20💕" target="_blank">
-    Order via Messenger
-  </a>
+    <div class="choice">📦 45 Polaroid Prints + Box — ₱145 only</div>
+
+    <a class="btn" href="https://m.me/61579128398313?text=Hi!%20I%20want%20to%20order%20Polaroid%20with%20Box%20Set%20💕"
+       target="_blank">
+       Order via Messenger
+    </a>
+  </div>
 </div>
 
-<!-- FUZZYWIRE (NEW) -->
+<!-- FUZZYWIRE -->
 <div class="card">
   <div class="badge new">New</div>
   <img src="fuzzywire.jpg">
   <h3>Fuzzywire Bouquet</h3>
   <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
-
   <div class="choices" id="fuzzywire">
     <div class="gallery">
       <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
@@ -233,20 +245,16 @@ h2{text-align:center;margin-bottom:35px;}
     </div>
 
     <div class="choice">💐 Price Range — ₱280 – ₱400</div>
-
-    <a class="btn" href="https://m.me/61579128398313" target="_blank">
-      Order via Messenger
-    </a>
+    <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
 </div>
 
-<!-- KEYCHAIN (BEST SELLER) -->
+<!-- KEYCHAIN -->
 <div class="card">
   <div class="badge">Best Seller</div>
   <img src="keychain.jpg">
   <h3>Keychain Designs</h3>
   <button class="btn" onclick="toggle('keychain')">View Choices</button>
-
   <div class="choices" id="keychain">
     <div class="gallery">
       <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
@@ -257,25 +265,18 @@ h2{text-align:center;margin-bottom:35px;}
     </div>
 
     <div class="choice">🔑 Price Range — ₱20 – ₱35</div>
-
-    <a class="btn" href="https://m.me/61579128398313" target="_blank">
-      Order via Messenger
-    </a>
+    <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
   </div>
 </div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact">
 <h2>Order Now</h2>
-<a href="https://m.me/61579128398313" target="_blank">
-Message Us on Messenger
-</a>
+<a href="https://m.me/61579128398313" target="_blank">Message Us on Messenger</a>
 </div>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
   <img id="zoomed">
 </div>
