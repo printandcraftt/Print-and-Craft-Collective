@@ -11,29 +11,6 @@ body{
   font-family:Poppins,sans-serif;
   background:linear-gradient(180deg,#fff3f7,#ffffff);
   color:#5a2a3a;
-  overflow-x:hidden;
-}
-
-/* FLOATING HEARTS */
-.hearts span{
-  position:fixed;
-  bottom:-50px;
-  font-size:22px;
-  animation:float 15s linear infinite;
-  opacity:.6;
-}
-@keyframes float{
-  from{transform:translateY(0)}
-  to{transform:translateY(-120vh);opacity:0}
-}
-
-/* PROMO */
-.promo{
-  background:linear-gradient(135deg,#ffb3c6,#ffccd5);
-  padding:16px;
-  text-align:center;
-  font-weight:700;
-  color:#7a1f3d;
 }
 
 /* HERO */
@@ -56,7 +33,6 @@ body{
   border-radius:30px;
   font-weight:600;
 }
-
 .valentine-tag{
   display:inline-block;
   margin-bottom:14px;
@@ -67,7 +43,7 @@ body{
   border-radius:25px;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{padding:70px 25px;}
 h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 
@@ -92,6 +68,8 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   border-radius:22px;
   margin-bottom:18px;
 }
+
+/* DESCRIPTION */
 .product-desc{
   font-size:14px;
   margin-bottom:16px;
@@ -145,20 +123,7 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   font-weight:bold;
 }
 
-/* CONTACT */
-.contact{
-  background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
-  text-align:center;
-  padding:70px 20px;
-}
-.contact .btn{
-  background:white;
-  color:#ff4d6d;
-  margin:12px 0;
-  width:280px;
-}
-
-/* FLOATING BUTTONS */
+/* FLOATING CHAT */
 .messenger-float{
   position:fixed;
   bottom:20px;
@@ -171,18 +136,6 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   text-decoration:none;
   z-index:999;
 }
-.timer-float{
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  background:white;
-  color:#ff4d6d;
-  padding:14px 22px;
-  border-radius:35px;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(255,77,109,.35);
-  z-index:999;
-}
 
 /* LIGHTBOX */
 .lightbox{
@@ -192,6 +145,7 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   background:rgba(0,0,0,.85);
   justify-content:center;
   align-items:center;
+  z-index:1000;
 }
 .lightbox img{
   max-width:90%;
@@ -203,20 +157,7 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 
 <body>
 
-<!-- FLOATING HEARTS -->
-<div class="hearts">
-  <span style="left:5%">💗</span>
-  <span style="left:20%">💕</span>
-  <span style="left:35%">💖</span>
-  <span style="left:50%">💞</span>
-  <span style="left:65%">💓</span>
-  <span style="left:80%">💘</span>
-</div>
-
-<div class="promo">
-🎁 Valentine's Coming — Perfect Gifts Made With Love 💝
-</div>
-
+<!-- HERO -->
 <div class="hero">
   <div>
     <span class="valentine-tag">💝 Valentine’s Day is Coming Soon</span>
@@ -235,8 +176,11 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="badge">Best Seller</div>
 <img src="polaroid.jpg">
 <h3>Polaroid Prints</h3>
-<p class="product-desc">High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.</p>
+<p class="product-desc">
+High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.
+</p>
 <button class="btn" onclick="toggle('polaroid')">View Choices</button>
+
 <div class="choices" id="polaroid">
 <div class="gallery">
 <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -249,7 +193,9 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="choice">📷 15 pcs — ₱50</div>
 <div class="choice">📷 30 pcs — ₱95</div>
 <div class="choice">📷 45 pcs — ₱145</div>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Prints" target="_blank">
+Order via Messenger
+</a>
 </div>
 </div>
 
@@ -258,8 +204,11 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="badge new">New</div>
 <img src="polaroid_boxset.jpg">
 <h3>Polaroid with Box Set</h3>
-<p class="product-desc">Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.</p>
+<p class="product-desc">
+Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.
+</p>
 <button class="btn" onclick="toggle('boxset')">View Choices</button>
+
 <div class="choices" id="boxset">
 <div class="gallery">
 <img src="photo_6053349425955934203_y.jpg" onclick="zoom(this)">
@@ -276,9 +225,12 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <img src="photo_6053349425955934230_y.jpg" onclick="zoom(this)">
 <img src="photo_6053349425955934231_y.jpg" onclick="zoom(this)">
 <img src="photo_6053349425955934234_y.jpg" onclick="zoom(this)">
+<img src="photo_6053349425955934239_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">📦 45 Polaroid + Box — ₱145</div>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Box%20Set" target="_blank">
+Order via Messenger
+</a>
 </div>
 </div>
 
@@ -287,17 +239,36 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="badge new">New</div>
 <img src="fuzzywire.jpg">
 <h3>Fuzzywire Bouquet</h3>
-<p class="product-desc">Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.</p>
+<p class="product-desc">
+Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.
+</p>
 <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
+
 <div class="choices" id="fuzzywire">
 <div class="gallery">
 <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
 <img src="627384154_122144702924970946_8931295130869258425_n.jpg" onclick="zoom(this)">
 <img src="627475240_122144702912970946_4662157742104378510_n.jpg" onclick="zoom(this)">
 <img src="628210434_122144699558970946_5812332420657932667_n (1).jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924199_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924201_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924202_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924203_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924204_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924206_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924207_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924208_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924210_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924211_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924353_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924354_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924355_y.jpg" onclick="zoom(this)">
+<img src="photo_6064470324645924357_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">💐 ₱280 – ₱400</div>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Fuzzywire%20Bouquet" target="_blank">
+Order via Messenger
+</a>
 </div>
 </div>
 
@@ -306,8 +277,11 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="badge">Best Seller</div>
 <img src="keychain.jpg">
 <h3>Keychain Designs</h3>
-<p class="product-desc">Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.</p>
+<p class="product-desc">
+Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.
+</p>
 <button class="btn" onclick="toggle('keychain')">View Choices</button>
+
 <div class="choices" id="keychain">
 <div class="gallery">
 <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
@@ -317,22 +291,16 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <img src="photo_6053349425955934243_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">🔑 ₱20 – ₱35</div>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Keychain%20Designs" target="_blank">
+Order via Messenger
+</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<div class="contact">
-<h2>Order Now ❤️</h2>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Chat on Messenger</a><br>
-<a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">Visit Facebook Page</a><br>
-<a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">Visit Facebook Account</a>
-</div>
-
 <a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
-<div class="timer-float" id="timer">⏰ Loading…</div>
 
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
 <img id="zoomed">
@@ -347,20 +315,6 @@ function zoom(img){
   document.getElementById("lightbox").style.display="flex";
   document.getElementById("zoomed").src=img.src;
 }
-
-/* COUNTDOWN */
-const target=new Date(new Date().getFullYear(),1,14,0,0,0).getTime();
-setInterval(()=>{
-  const now=new Date().getTime();
-  const d=target-now;
-  if(d>0){
-    const days=Math.floor(d/(1000*60*60*24));
-    const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-    const mins=Math.floor((d%(1000*60*60))/(1000*60));
-    const secs=Math.floor((d%(1000*60))/1000);
-    document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
-  }
-},1000);
 </script>
 
 </body>
