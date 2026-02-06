@@ -75,9 +75,10 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   padding:14px 30px;
   border-radius:30px;
   background:linear-gradient(135deg,#ff758f,#ff4d6d);
-  color:white;border:none;font-weight:bold;
-  cursor:pointer;text-decoration:none;
-  display:inline-block;margin-top:14px;
+  color:white;border:none;
+  font-weight:bold;cursor:pointer;
+  text-decoration:none;display:inline-block;
+  margin-top:14px;
 }
 
 /* CHOICES */
@@ -107,13 +108,15 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   position:fixed;bottom:20px;right:20px;
   background:#ff4d6d;color:white;
   padding:16px 26px;border-radius:35px;
-  font-weight:bold;text-decoration:none;z-index:999;
+  font-weight:bold;text-decoration:none;
+  z-index:999;
 }
 .timer-float{
   position:fixed;bottom:80px;right:20px;
   background:white;color:#ff4d6d;
   padding:14px 22px;border-radius:35px;
-  font-weight:bold;box-shadow:0 10px 25px rgba(255,77,109,.35);
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(255,77,109,.35);
   z-index:999;
 }
 
@@ -134,10 +137,39 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   transform:translateY(-50%);
   font-size:45px;color:white;
   cursor:pointer;padding:20px;
-  user-select:none;
 }
 .arrow.left{left:10px;}
 .arrow.right{right:10px;}
+
+/* PROMO POPUP */
+.promo-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:3000;
+  justify-content:center;
+  align-items:center;
+}
+.promo-box{
+  background:#fff;
+  border-radius:25px;
+  padding:30px 25px;
+  max-width:320px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+.secondary{
+  background:#ffd6e0;
+  color:#ff4d6d;
+}
+.code{
+  background:#fff3f7;
+  padding:10px;
+  border-radius:12px;
+  font-weight:bold;
+  margin:10px 0;
+}
 </style>
 </head>
 
@@ -162,9 +194,7 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <div class="badge">Best Seller</div>
 <img src="polaroid.jpg">
 <h3>Polaroid Prints</h3>
-<p class="product-desc">
-High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.
-</p>
+<p class="product-desc">High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.</p>
 <button class="btn" onclick="toggle('polaroid')">View Choices</button>
 <div class="choices" id="polaroid">
 <div class="gallery">
@@ -187,9 +217,7 @@ High-quality Polaroid prints with a classic look—ideal for gifts, decor, or me
 <div class="badge new">New</div>
 <img src="polaroid_boxset.jpg">
 <h3>Polaroid with Box Set</h3>
-<p class="product-desc">
-Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.
-</p>
+<p class="product-desc">Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.</p>
 <button class="btn" onclick="toggle('boxset')">View Choices</button>
 <div class="choices" id="boxset">
 <div class="gallery">
@@ -219,9 +247,7 @@ Polaroid prints paired with a beautiful box, ready for gifting and preserving yo
 <div class="badge new">New</div>
 <img src="fuzzywire.jpg">
 <h3>Fuzzywire Bouquet</h3>
-<p class="product-desc">
-Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.
-</p>
+<p class="product-desc">Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.</p>
 <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
 <div class="choices" id="fuzzywire">
 <div class="gallery">
@@ -254,9 +280,7 @@ Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and
 <div class="badge">Best Seller</div>
 <img src="keychain.jpg">
 <h3>Keychain Designs</h3>
-<p class="product-desc">
-Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.
-</p>
+<p class="product-desc">Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.</p>
 <button class="btn" onclick="toggle('keychain')">View Choices</button>
 <div class="choices" id="keychain">
 <div class="gallery">
@@ -291,41 +315,36 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
   <span class="arrow right" onclick="next()">›</span>
 </div>
 
+<!-- PROMO POPUP -->
+<div class="promo-overlay" id="promo">
+  <div class="promo-box" id="promoBox">
+    <h3>🎁 Valentine Promo</h3>
+    <p>You have <strong>ONE chance</strong> to try your luck!<br>Win <strong>10% OFF Discount</strong> if you order 💕</p>
+    <button class="btn" onclick="tryLuck()">TRY MY LUCK</button>
+    <button class="btn secondary" onclick="closePromo()">Maybe later</button>
+  </div>
+</div>
+
 <script>
 let images=[],index=0,startX=0;
-
-function toggle(id){
-  const el=document.getElementById(id);
-  el.style.display=el.style.display==="block"?"none":"block";
-}
-
+function toggle(id){const el=document.getElementById(id);el.style.display=el.style.display==="block"?"none":"block";}
 function zoom(img){
   images=[...img.parentElement.querySelectorAll("img")];
   index=images.indexOf(img);
   document.getElementById("zoomed").src=img.src;
   document.getElementById("lightbox").style.display="flex";
 }
-
-function next(){
-  index=(index+1)%images.length;
-  document.getElementById("zoomed").src=images[index].src;
-}
-function prev(){
-  index=(index-1+images.length)%images.length;
-  document.getElementById("zoomed").src=images[index].src;
-}
-
-/* swipe */
-document.getElementById("lightbox").addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
-});
+function next(){index=(index+1)%images.length;document.getElementById("zoomed").src=images[index].src;}
+function prev(){index=(index-1+images.length)%images.length;document.getElementById("zoomed").src=images[index].src;}
+document.getElementById("lightbox").addEventListener("touchstart",e=>startX=e.touches[0].clientX);
 document.getElementById("lightbox").addEventListener("touchend",e=>{
   let endX=e.changedTouches[0].clientX;
-  if(startX-endX>50) next();
-  if(endX-startX>50) prev();
+  if(startX-endX>50)next();
+  if(endX-startX>50)prev();
 });
+document.getElementById("lightbox").onclick=e=>{if(e.target.id==="lightbox")e.currentTarget.style.display="none";};
 
-/* countdown */
+/* COUNTDOWN */
 const target=new Date(new Date().getFullYear(),1,14).getTime();
 setInterval(()=>{
   const now=new Date().getTime(),d=target-now;
@@ -338,10 +357,41 @@ setInterval(()=>{
   }
 },1000);
 
-/* close */
-document.getElementById("lightbox").onclick=e=>{
-  if(e.target.id==="lightbox") e.currentTarget.style.display="none";
-};
+/* PROMO AFTER 10 SECONDS */
+setTimeout(()=>{
+  const today=new Date().toDateString();
+  if(localStorage.getItem("promoDate")!==today){
+    document.getElementById("promo").style.display="flex";
+  }
+},10000);
+
+function closePromo(){
+  localStorage.setItem("promoDate",new Date().toDateString());
+  document.getElementById("promo").style.display="none";
+}
+
+function tryLuck(){
+  localStorage.setItem("promoDate",new Date().toDateString());
+  const chance=Math.floor(Math.random()*100)+1;
+  const box=document.getElementById("promoBox");
+  if(chance<=5){
+    const code="VAL-"+Math.random().toString(36).substring(2,7).toUpperCase();
+    box.innerHTML=`
+      <h3>🎉 Congratulations!</h3>
+      <p>You won <strong>10% OFF</strong> 💖</p>
+      <div class="code">${code}</div>
+      <p>📸 Screenshot this and send it to us on Messenger.</p>
+      <a class="btn" href="https://m.me/61579128398313?text=I%20won%20the%2010%25%20promo%20code%20${code}" target="_blank">Order Now</a>
+    `;
+  }else{
+    box.innerHTML=`
+      <h3>😔 Better luck next time!</h3>
+      <p>You didn’t win today, but thank you for trying 💕</p>
+      <p><strong>Try again tomorrow 💗</strong></p>
+      <button class="btn secondary" onclick="closePromo()">Close</button>
+    `;
+  }
+}
 </script>
 
 </body>
