@@ -374,7 +374,7 @@ function tryLuck(){
   localStorage.setItem("promoDate",new Date().toDateString());
   const chance=Math.floor(Math.random()*100)+1;
   const box=document.getElementById("promoBox");
-  if(chance<=100){
+  if(chance<=50){
     const code="VAL-"+Math.random().toString(36).substring(2,7).toUpperCase();
     box.innerHTML=`
       <h3>🎉 Congratulations!</h3>
