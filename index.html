@@ -12,6 +12,28 @@ body{
   background:linear-gradient(180deg,#fff3f7,#ffffff);
   color:#5a2a3a;
 }
+  /* ANNOUNCEMENT BOX */
+.announcement-box{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:white;
+  padding:14px 18px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  z-index:3000;
+  font-size:14px;
+  color:#5a2a3a;
+}
+
+@media(max-width:600px){
+  .announcement-box{
+    right:50%;
+    transform:translateX(50%);
+    width:85%;
+    text-align:center;
+  }
+}
 /* HERO */
 .hero{
   height:80vh;
@@ -177,7 +199,10 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 </head>
 
 <body>
-
+  
+  <div class="announcement-box">
+  👋 Hello everyone, welcome to our website!
+</div>
 <!-- HERO -->
 <div class="hero">
   <div>
