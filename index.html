@@ -318,7 +318,7 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 <!-- PROMO POPUP -->
 <div class="promo-overlay" id="promo">
   <div class="promo-box" id="promoBox">
-    <h3>🎁 Valentine Promo</h3>
+    <h3>🎁 Valentine's Promo</h3>
     <p>You have <strong>ONE chance</strong> to try your luck!<br>Win <strong>10% OFF Discount</strong> if you order 💕</p>
     <button class="btn" onclick="tryLuck()">TRY MY LUCK</button>
     <button class="btn secondary" onclick="closePromo()">Maybe later</button>
@@ -374,7 +374,7 @@ function tryLuck(){
   localStorage.setItem("promoDate",new Date().toDateString());
   const chance=Math.floor(Math.random()*100)+1;
   const box=document.getElementById("promoBox");
-  if(chance<=5){
+  if(chance<=50){
     const code="VAL-"+Math.random().toString(36).substring(2,7).toUpperCase();
     box.innerHTML=`
       <h3>🎉 Congratulations!</h3>
