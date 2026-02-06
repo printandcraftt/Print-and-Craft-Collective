@@ -103,18 +103,29 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 }
 
 /* CHOICES */
-.choices{display:none;margin-top:18px;text-align:left;}
+.choices{
+  display:none;
+  margin-top:18px;
+  text-align:left;
+}
+
+/* 🔥 HORIZONTAL GALLERY (CHANGED) */
 .gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
+  display:flex;
   gap:12px;
+  overflow-x:auto;
+  padding-bottom:10px;
   margin-bottom:16px;
+  scroll-snap-type:x mandatory;
 }
 .gallery img{
-  width:100%;
+  width:150px;
+  flex-shrink:0;
   border-radius:15px;
   cursor:pointer;
+  scroll-snap-align:start;
 }
+
 .choice{
   border-top:1px dashed #ffb3c6;
   padding:10px 0;
@@ -312,7 +323,7 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
 </div>
 </section>
 
-<!-- CONTACT BUTTONS -->
+<!-- CONTACT -->
 <div class="contact">
 <h2>Order Now ❤️</h2>
 <a class="btn" href="https://m.me/61579128398313" target="_blank">Message on Messenger</a><br>
@@ -320,11 +331,9 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
 <a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">Visit Facebook Account</a>
 </div>
 
-<!-- FLOATING BUTTONS -->
 <a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
 <div class="timer-float" id="timer">⏰ Loading…</div>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
 <img id="zoomed">
 </div>
@@ -339,7 +348,6 @@ function zoom(img){
   document.getElementById("zoomed").src=img.src;
 }
 
-/* VALENTINE COUNTDOWN */
 const target=new Date(new Date().getFullYear(),1,14,0,0,0).getTime();
 setInterval(()=>{
   const now=new Date().getTime();
@@ -349,8 +357,7 @@ setInterval(()=>{
     const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
     const mins=Math.floor((d%(1000*60*60))/(1000*60));
     const secs=Math.floor((d%(1000*60))/1000);
-    document.getElementById("timer").innerHTML=
-      `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
+    document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
   }
 },1000);
 </script>
