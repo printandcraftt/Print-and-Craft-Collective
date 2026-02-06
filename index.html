@@ -22,10 +22,7 @@ body{
   justify-content:center;
   text-align:center;
 }
-.hero h1{
-  font-size:46px;
-  color:#7a1f3d;
-}
+.hero h1{font-size:46px;color:#7a1f3d;}
 .hero p{
   background:#fff;
   display:inline-block;
@@ -53,7 +50,6 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:35px;
 }
-
 .card{
   background:#fff;
   border-radius:28px;
@@ -62,29 +58,15 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   position:relative;
   box-shadow:0 15px 35px rgba(255,150,180,.25);
 }
-.card img{
-  width:100%;
-  border-radius:22px;
-  margin-bottom:18px;
-}
-
-.product-desc{
-  font-size:14px;
-  margin-bottom:16px;
-  line-height:1.6;
-}
+.card img{width:100%;border-radius:22px;margin-bottom:18px;}
+.product-desc{font-size:14px;margin-bottom:16px;line-height:1.6;}
 
 /* BADGES */
 .badge{
-  position:absolute;
-  top:15px;
-  left:-10px;
-  background:#ff4d6d;
-  color:white;
-  padding:8px 16px;
-  font-size:12px;
-  font-weight:bold;
-  border-radius:0 20px 20px 0;
+  position:absolute;top:15px;left:-10px;
+  background:#ff4d6d;color:white;
+  padding:8px 16px;font-size:12px;
+  font-weight:bold;border-radius:0 20px 20px 0;
 }
 .new{background:#c77dff;}
 
@@ -93,100 +75,69 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   padding:14px 30px;
   border-radius:30px;
   background:linear-gradient(135deg,#ff758f,#ff4d6d);
-  color:white;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:14px;
+  color:white;border:none;font-weight:bold;
+  cursor:pointer;text-decoration:none;
+  display:inline-block;margin-top:14px;
 }
 
 /* CHOICES */
-.choices{
-  display:none;
-  margin-top:18px;
-  text-align:left;
-}
-
-/* 🔥 HORIZONTAL GALLERY (CHANGED) */
+.choices{display:none;margin-top:18px;text-align:left;}
 .gallery{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding-bottom:10px;
-  margin-bottom:16px;
-  scroll-snap-type:x mandatory;
+  display:flex;gap:12px;overflow-x:auto;
+  padding-bottom:10px;margin-bottom:16px;
 }
 .gallery img{
-  width:150px;
-  flex-shrink:0;
-  border-radius:15px;
-  cursor:pointer;
-  scroll-snap-align:start;
+  width:150px;flex-shrink:0;
+  border-radius:15px;cursor:pointer;
 }
-
-.choice{
-  border-top:1px dashed #ffb3c6;
-  padding:10px 0;
-  font-weight:bold;
-}
+.choice{border-top:1px dashed #ffb3c6;padding:10px 0;font-weight:bold;}
 
 /* CONTACT */
 .contact{
   background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
-  text-align:center;
-  padding:70px 20px;
+  text-align:center;padding:70px 20px;
 }
 .contact .btn{
-  background:white;
-  color:#ff4d6d;
-  margin:10px 0;
-  width:280px;
+  background:white;color:#ff4d6d;
+  margin:10px 0;width:280px;
 }
 
-/* FLOATING BUTTONS */
+/* FLOATING */
 .messenger-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#ff4d6d;
-  color:white;
-  padding:16px 26px;
-  border-radius:35px;
-  font-weight:bold;
-  text-decoration:none;
-  z-index:999;
+  position:fixed;bottom:20px;right:20px;
+  background:#ff4d6d;color:white;
+  padding:16px 26px;border-radius:35px;
+  font-weight:bold;text-decoration:none;z-index:999;
 }
-
 .timer-float{
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  background:white;
-  color:#ff4d6d;
-  padding:14px 22px;
-  border-radius:35px;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(255,77,109,.35);
+  position:fixed;bottom:80px;right:20px;
+  background:white;color:#ff4d6d;
+  padding:14px 22px;border-radius:35px;
+  font-weight:bold;box-shadow:0 10px 25px rgba(255,77,109,.35);
   z-index:999;
 }
 
 /* LIGHTBOX */
 .lightbox{
   display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  justify-content:center;
-  align-items:center;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
+  justify-content:center;align-items:center;
   z-index:1000;
 }
 .lightbox img{
-  max-width:90%;
-  max-height:90%;
+  max-width:90%;max-height:90%;
   border-radius:20px;
 }
+.arrow{
+  position:absolute;top:50%;
+  transform:translateY(-50%);
+  font-size:45px;color:white;
+  cursor:pointer;padding:20px;
+  user-select:none;
+}
+.arrow.left{left:10px;}
+.arrow.right{right:10px;}
 </style>
 </head>
 
@@ -323,7 +274,6 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
 </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact">
 <h2>Order Now ❤️</h2>
 <a class="btn" href="https://m.me/61579128398313" target="_blank">Message on Messenger</a><br>
@@ -334,24 +284,51 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
 <a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
 <div class="timer-float" id="timer">⏰ Loading…</div>
 
-<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-<img id="zoomed">
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="arrow left" onclick="prev()">‹</span>
+  <img id="zoomed">
+  <span class="arrow right" onclick="next()">›</span>
 </div>
 
 <script>
+let images=[],index=0,startX=0;
+
 function toggle(id){
   const el=document.getElementById(id);
-  el.style.display = el.style.display==="block" ? "none" : "block";
-}
-function zoom(img){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("zoomed").src=img.src;
+  el.style.display=el.style.display==="block"?"none":"block";
 }
 
-const target=new Date(new Date().getFullYear(),1,14,0,0,0).getTime();
+function zoom(img){
+  images=[...img.parentElement.querySelectorAll("img")];
+  index=images.indexOf(img);
+  document.getElementById("zoomed").src=img.src;
+  document.getElementById("lightbox").style.display="flex";
+}
+
+function next(){
+  index=(index+1)%images.length;
+  document.getElementById("zoomed").src=images[index].src;
+}
+function prev(){
+  index=(index-1+images.length)%images.length;
+  document.getElementById("zoomed").src=images[index].src;
+}
+
+/* swipe */
+document.getElementById("lightbox").addEventListener("touchstart",e=>{
+  startX=e.touches[0].clientX;
+});
+document.getElementById("lightbox").addEventListener("touchend",e=>{
+  let endX=e.changedTouches[0].clientX;
+  if(startX-endX>50) next();
+  if(endX-startX>50) prev();
+});
+
+/* countdown */
+const target=new Date(new Date().getFullYear(),1,14).getTime();
 setInterval(()=>{
-  const now=new Date().getTime();
-  const d=target-now;
+  const now=new Date().getTime(),d=target-now;
   if(d>0){
     const days=Math.floor(d/(1000*60*60*24));
     const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
@@ -360,6 +337,11 @@ setInterval(()=>{
     document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
   }
 },1000);
+
+/* close */
+document.getElementById("lightbox").onclick=e=>{
+  if(e.target.id==="lightbox") e.currentTarget.style.display="none";
+};
 </script>
 
 </body>
