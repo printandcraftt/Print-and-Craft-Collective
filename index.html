@@ -12,30 +12,43 @@ body{
   background:linear-gradient(180deg,#fff3f7,#ffffff);
   color:#5a2a3a;
 }
-  /* ANNOUNCEMENT BOX */
+
+/* ANNOUNCEMENT BOX */
 .announcement-box{
-  position:fixed;
+  position:absolute;
   top:20px;
   right:20px;
-  background:white;
+  background:#fff;
   padding:14px 18px;
   border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
-  z-index:3000;
   font-size:14px;
   color:#5a2a3a;
+  z-index:10;
 }
 
-@media(max-width:600px){
+/* Make hero a positioning parent */
+.hero{
+  position:relative;        /* 👈 REQUIRED */
+  height:80vh;
+  background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+/* Mobile fix */
+@media(max-width:680px){
   .announcement-box{
     right:50%;
     transform:translateX(50%);
-    width:85%;
     text-align:center;
+    width:85%;
   }
 }
 /* HERO */
 .hero{
+  position:relative;
   height:80vh;
   background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
   display:flex;
