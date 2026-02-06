@@ -47,14 +47,13 @@ body{
 section{padding:70px 25px;}
 h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 
-/* PRODUCTS GRID */
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:35px;
 }
 
-/* CARD */
 .card{
   background:#fff;
   border-radius:28px;
@@ -69,7 +68,6 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   margin-bottom:18px;
 }
 
-/* DESCRIPTION */
 .product-desc{
   font-size:14px;
   margin-bottom:16px;
@@ -123,7 +121,20 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   font-weight:bold;
 }
 
-/* FLOATING CHAT */
+/* CONTACT */
+.contact{
+  background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
+  text-align:center;
+  padding:70px 20px;
+}
+.contact .btn{
+  background:white;
+  color:#ff4d6d;
+  margin:10px 0;
+  width:280px;
+}
+
+/* FLOATING BUTTONS */
 .messenger-float{
   position:fixed;
   bottom:20px;
@@ -134,6 +145,19 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   border-radius:35px;
   font-weight:bold;
   text-decoration:none;
+  z-index:999;
+}
+
+.timer-float{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:white;
+  color:#ff4d6d;
+  padding:14px 22px;
+  border-radius:35px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(255,77,109,.35);
   z-index:999;
 }
 
@@ -180,7 +204,6 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 High-quality Polaroid prints with a classic look—ideal for gifts, decor, or memory collections.
 </p>
 <button class="btn" onclick="toggle('polaroid')">View Choices</button>
-
 <div class="choices" id="polaroid">
 <div class="gallery">
 <img src="photo_6053349425955934089_y.jpg" onclick="zoom(this)">
@@ -193,9 +216,7 @@ High-quality Polaroid prints with a classic look—ideal for gifts, decor, or me
 <div class="choice">📷 15 pcs — ₱50</div>
 <div class="choice">📷 30 pcs — ₱95</div>
 <div class="choice">📷 45 pcs — ₱145</div>
-<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Prints" target="_blank">
-Order via Messenger
-</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Prints" target="_blank">Order via Messenger</a>
 </div>
 </div>
 
@@ -208,7 +229,6 @@ Order via Messenger
 Polaroid prints paired with a beautiful box, ready for gifting and preserving your favorite moments.
 </p>
 <button class="btn" onclick="toggle('boxset')">View Choices</button>
-
 <div class="choices" id="boxset">
 <div class="gallery">
 <img src="photo_6053349425955934203_y.jpg" onclick="zoom(this)">
@@ -228,9 +248,7 @@ Polaroid prints paired with a beautiful box, ready for gifting and preserving yo
 <img src="photo_6053349425955934239_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">📦 45 Polaroid + Box — ₱145</div>
-<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Box%20Set" target="_blank">
-Order via Messenger
-</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Polaroid%20Box%20Set" target="_blank">Order via Messenger</a>
 </div>
 </div>
 
@@ -243,7 +261,6 @@ Order via Messenger
 Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and special occasions.
 </p>
 <button class="btn" onclick="toggle('fuzzywire')">View Choices</button>
-
 <div class="choices" id="fuzzywire">
 <div class="gallery">
 <img src="625878961_122144699462970946_8293663236360866295_n.jpg" onclick="zoom(this)">
@@ -266,9 +283,7 @@ Handmade fuzzy wire bouquet that lasts forever—perfect for heartfelt gifts and
 <img src="photo_6064470324645924357_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">💐 ₱280 – ₱400</div>
-<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Fuzzywire%20Bouquet" target="_blank">
-Order via Messenger
-</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Fuzzywire%20Bouquet" target="_blank">Order via Messenger</a>
 </div>
 </div>
 
@@ -281,7 +296,6 @@ Order via Messenger
 Personalized keychain designs made with your photos—perfect as gifts or everyday keepsakes.
 </p>
 <button class="btn" onclick="toggle('keychain')">View Choices</button>
-
 <div class="choices" id="keychain">
 <div class="gallery">
 <img src="photo_6053349425955934049_y.jpg" onclick="zoom(this)">
@@ -291,17 +305,26 @@ Personalized keychain designs made with your photos—perfect as gifts or everyd
 <img src="photo_6053349425955934243_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">🔑 ₱20 – ₱35</div>
-<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Keychain%20Designs" target="_blank">
-Order via Messenger
-</a>
+<a class="btn" href="https://m.me/61579128398313?text=Interested%20in%20Keychain%20Designs" target="_blank">Order via Messenger</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
+<!-- CONTACT BUTTONS -->
+<div class="contact">
+<h2>Order Now ❤️</h2>
+<a class="btn" href="https://m.me/61579128398313" target="_blank">Message on Messenger</a><br>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">Visit Facebook Page</a><br>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">Visit Facebook Account</a>
+</div>
 
+<!-- FLOATING BUTTONS -->
+<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
+<div class="timer-float" id="timer">⏰ Loading…</div>
+
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
 <img id="zoomed">
 </div>
@@ -315,6 +338,21 @@ function zoom(img){
   document.getElementById("lightbox").style.display="flex";
   document.getElementById("zoomed").src=img.src;
 }
+
+/* VALENTINE COUNTDOWN */
+const target=new Date(new Date().getFullYear(),1,14,0,0,0).getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=target-now;
+  if(d>0){
+    const days=Math.floor(d/(1000*60*60*24));
+    const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((d%(1000*60*60))/(1000*60));
+    const secs=Math.floor((d%(1000*60))/1000);
+    document.getElementById("timer").innerHTML=
+      `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
+  }
+},1000);
 </script>
 
 </body>
