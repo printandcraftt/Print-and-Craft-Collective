@@ -12,7 +12,12 @@ body{
   background:linear-gradient(180deg,#fff3f7,#ffffff);
   color:#5a2a3a;
 }
-
+/* full-row product under main grid – SAME SIZE AS OTHERS */
+.card.full-row{
+  grid-column: 1 / -1;
+  max-width: none;   /* remove size limit */
+  margin: 0;
+}
 /* HERO */
 .hero{
   height:80vh;
