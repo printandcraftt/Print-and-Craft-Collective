@@ -88,8 +88,12 @@ h2{text-align:center;color:#d6336c;margin-bottom:40px;}
   padding-bottom:10px;margin-bottom:16px;
 }
 .gallery img{
-  width:150px;flex-shrink:0;
-  border-radius:15px;cursor:pointer;
+  width:150px;
+  height:200px;          /* 👈 controls image height */
+  object-fit:cover;      /* 👈 prevents stretching */
+  border-radius:15px;
+  cursor:pointer;
+  flex-shrink:0;
 }
 .choice{border-top:1px dashed #ffb3c6;padding:10px 0;font-weight:bold;}
 
