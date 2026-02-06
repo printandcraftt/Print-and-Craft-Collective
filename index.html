@@ -18,8 +18,8 @@ body{
 .hearts span{
   position:fixed;
   bottom:-50px;
-  font-size:20px;
-  animation:float 14s linear infinite;
+  font-size:22px;
+  animation:float 15s linear infinite;
   opacity:.6;
 }
 @keyframes float{
@@ -27,11 +27,11 @@ body{
   to{transform:translateY(-120vh);opacity:0}
 }
 
-/* PROMO BANNER */
+/* PROMO */
 .promo{
   background:linear-gradient(135deg,#ffb3c6,#ffccd5);
+  padding:16px;
   text-align:center;
-  padding:14px;
   font-weight:700;
   color:#7a1f3d;
 }
@@ -52,63 +52,50 @@ body{
 .hero p{
   background:#fff;
   display:inline-block;
-  padding:12px 22px;
+  padding:14px 24px;
   border-radius:30px;
   font-weight:600;
 }
 
 .valentine-tag{
   display:inline-block;
-  margin-bottom:12px;
-  padding:8px 20px;
-  background:#ffffff;
+  margin-bottom:14px;
+  padding:10px 22px;
+  background:#fff;
   color:#d6336c;
   font-weight:700;
   border-radius:25px;
-  box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
 
-/* SECTION */
-section{padding:60px 25px;}
-h2{text-align:center;color:#d6336c;margin-bottom:30px;}
-h2::after{content:" 💕";}
+/* SECTIONS */
+section{padding:70px 25px;}
+h2{text-align:center;color:#d6336c;margin-bottom:40px;}
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 /* CARD */
 .card{
   background:#fff;
   border-radius:28px;
-  padding:22px;
+  padding:26px 22px 30px;
   text-align:center;
   position:relative;
   box-shadow:0 15px 35px rgba(255,150,180,.25);
-  transition:.4s;
 }
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 25px 50px rgba(255,150,180,.4);
-}
-
 .card img{
   width:100%;
   border-radius:22px;
-  margin-bottom:15px;
-  transition:.4s;
+  margin-bottom:18px;
 }
-.card img:hover,
-.gallery img:hover{transform:scale(1.05);}
-
 .product-desc{
   font-size:14px;
-  color:#7a3b4f;
-  margin-bottom:12px;
-  line-height:1.5;
+  margin-bottom:16px;
+  line-height:1.6;
 }
 
 /* BADGES */
@@ -127,36 +114,34 @@ h2::after{content:" 💕";}
 
 /* BUTTON */
 .btn{
-  padding:13px 28px;
+  padding:14px 30px;
   border-radius:30px;
   background:linear-gradient(135deg,#ff758f,#ff4d6d);
   color:white;
   border:none;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
   text-decoration:none;
-}
-.btn:hover{
-  box-shadow:0 12px 25px rgba(255,77,109,.5);
+  display:inline-block;
+  margin-top:14px;
 }
 
-/* GALLERY */
-.choices{display:none;margin-top:15px;text-align:left;}
+/* CHOICES */
+.choices{display:none;margin-top:18px;text-align:left;}
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  gap:12px;
+  margin-bottom:16px;
 }
 .gallery img{
   width:100%;
   border-radius:15px;
   cursor:pointer;
 }
-
-/* PRICE */
 .choice{
   border-top:1px dashed #ffb3c6;
-  padding:8px 0;
+  padding:10px 0;
   font-weight:bold;
 }
 
@@ -164,27 +149,39 @@ h2::after{content:" 💕";}
 .contact{
   background:linear-gradient(135deg,#ffd6e0,#ffe9f0);
   text-align:center;
-  padding:60px 20px;
+  padding:70px 20px;
 }
 .contact .btn{
   background:white;
   color:#ff4d6d;
-  margin:8px 0;
+  margin:12px 0;
   width:280px;
 }
 
-/* FLOATING CHAT */
+/* FLOATING BUTTONS */
 .messenger-float{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#ff4d6d;
   color:white;
-  padding:15px 24px;
+  padding:16px 26px;
   border-radius:35px;
   font-weight:bold;
-  box-shadow:0 10px 30px rgba(255,77,109,.6);
   text-decoration:none;
+  z-index:999;
+}
+.timer-float{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:white;
+  color:#ff4d6d;
+  padding:14px 22px;
+  border-radius:35px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(255,77,109,.35);
+  z-index:999;
 }
 
 /* LIGHTBOX */
@@ -217,8 +214,7 @@ h2::after{content:" 💕";}
 </div>
 
 <div class="promo">
-🎁 Valentine Promo Coming Soon! Perfect gifts made with love 💝  
-<div id="countdown"></div>
+🎁 Valentine Promo Coming Soon — Perfect Gifts Made With Love 💝
 </div>
 
 <div class="hero">
@@ -280,7 +276,6 @@ h2::after{content:" 💕";}
 <img src="photo_6053349425955934230_y.jpg" onclick="zoom(this)">
 <img src="photo_6053349425955934231_y.jpg" onclick="zoom(this)">
 <img src="photo_6053349425955934234_y.jpg" onclick="zoom(this)">
-<img src="photo_6053349425955934239_y.jpg" onclick="zoom(this)">
 </div>
 <div class="choice">📦 45 Polaroid + Box — ₱145</div>
 <a class="btn" href="https://m.me/61579128398313" target="_blank">Order via Messenger</a>
@@ -330,12 +325,14 @@ h2::after{content:" 💕";}
 </section>
 
 <div class="contact">
-<h2>Order Now</h2>
-<a class="btn" href="https://m.me/61579128398313" target="_blank">Message Us on Messenger</a><br>
-<a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">Visit Our Facebook Page</a>
+<h2>Order Now ❤️</h2>
+<a class="btn" href="https://m.me/61579128398313" target="_blank">Chat on Messenger</a><br>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61581798095955" target="_blank">Visit Facebook Page</a><br>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61579128398313" target="_blank">Visit Facebook Account</a>
 </div>
 
 <a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
+<div class="timer-float" id="timer">⏰ Loading…</div>
 
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
 <img id="zoomed">
@@ -344,21 +341,24 @@ h2::after{content:" 💕";}
 <script>
 function toggle(id){
   const el=document.getElementById(id);
-  el.style.display = el.style.display==="block"?"none":"block";
+  el.style.display = el.style.display==="block" ? "none" : "block";
 }
 function zoom(img){
   document.getElementById("lightbox").style.display="flex";
-  document.getElementById("zoomed").src = img.src;
+  document.getElementById("zoomed").src=img.src;
 }
 
 /* COUNTDOWN */
-const target=new Date(new Date().getFullYear(),1,14).getTime();
+const target=new Date(new Date().getFullYear(),1,14,0,0,0).getTime();
 setInterval(()=>{
   const now=new Date().getTime();
   const d=target-now;
   if(d>0){
-    document.getElementById("countdown").innerHTML=
-    "⏰ "+Math.floor(d/(1000*60*60*24))+" days left until Valentine’s Day";
+    const days=Math.floor(d/(1000*60*60*24));
+    const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((d%(1000*60*60))/(1000*60));
+    const secs=Math.floor((d%(1000*60))/1000);
+    document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
   }
 },1000);
 </script>
