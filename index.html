@@ -68,6 +68,10 @@ z-index:3000;justify-content:center;align-items:center;}
   font-size: 28px;
   color: #d6336c;
 }
+  .lightbox{
+  touch-action: pan-y;
+}
+
 </style>
 </head>
   
@@ -322,16 +326,22 @@ z-index:3000;justify-content:center;align-items:center;}
 </body>
 
 </section>
+<!-- FLOATING BUTTON -->
+<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">
+  💬 Chat with Us
+</a>
 
-<a class="messenger-float" href="https://m.me/61579128398313" target="_blank">💬 Chat with Us</a>
+<!-- COUNTDOWN -->
 <div class="timer-float" id="timer">⏰ Loading…</div>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span class="arrow left" onclick="prev()">‹</span>
   <img id="zoomed">
   <span class="arrow right" onclick="next()">›</span>
 </div>
 
+<!-- PROMO -->
 <div class="promo-overlay" id="promo">
   <div class="promo-box" id="promoBox">
     <h3>🎁 Valentine’s Promo</h3>
@@ -340,145 +350,97 @@ z-index:3000;justify-content:center;align-items:center;}
     <button class="btn secondary" onclick="closePromo()">Maybe later</button>
   </div>
 </div>
+
 <script>
-  /* ================= TOGGLE VIEW CHOICES ================= */
-  window.toggle = function(id){
-    const el = document.getElementById(id);
-    if(!el) return;
-    el.style.display = (el.style.display === "block") ? "none" : "block";
-  };
+/* ================= TOGGLE VIEW CHOICES ================= */
+function toggle(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.style.display = (el.style.display === "block") ? "none" : "block";
+}
 
-  /* ================= IMAGE ZOOM ================= */
-  let images = [], index = 0;
+/* ================= IMAGE ZOOM ================= */
+let images = [], index = 0;
 
-  window.zoom = function(img){
-    images = Array.from(img.parentElement.querySelectorAll("img"));
-    index = images.indexOf(img);
-    document.getElementById("zoomed").src = img.src;
-    document.getElementById("lightbox").style.display = "flex";
-  };
+function zoom(img){
+  images = Array.from(img.parentElement.querySelectorAll("img"));
+  index = images.indexOf(img);
+  document.getElementById("zoomed").src = img.src;
+  document.getElementById("lightbox").style.display = "flex";
+}
 
-  window.next = function(){
-    index = (index + 1) % images.length;
-    document.getElementById("zoomed").src = images[index].src;
-  };
+function next(){
+  index = (index + 1) % images.length;
+  document.getElementById("zoomed").src = images[index].src;
+}
 
-  window.prev = function(){
-    index = (index - 1 + images.length) % images.length;
-    document.getElementById("zoomed").src = images[index].src;
-  };
+function prev(){
+  index = (index - 1 + images.length) % images.length;
+  document.getElementById("zoomed").src = images[index].src;
+}
 
-  document.getElementById("lightbox").addEventListener("click", e => {
-    if (e.target.id === "lightbox") {
-      e.currentTarget.style.display = "none";
-    }
-  });
-
-  let startX = 0;
+/* ================= SWIPE ================= */
+let startX = 0;
 let endX = 0;
-
 const lightbox = document.getElementById("lightbox");
 
-lightbox.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
-
+lightbox.addEventListener("touchstart", e => startX = e.touches[0].clientX);
 lightbox.addEventListener("touchend", e => {
   endX = e.changedTouches[0].clientX;
-  handleSwipe();
+  if (endX < startX - 50) next();
+  if (endX > startX + 50) prev();
 });
 
-lightbox.addEventListener("mousedown", e => {
-  startX = e.clientX;
-});
-
-lightbox.addEventListener("mouseup", e => {
-  endX = e.clientX;
-  handleSwipe();
-});
-
-function handleSwipe(){
-  if (endX < startX - 50) {
-    next();   // swipe left → next image
+/* ================= COUNTDOWN ================= */
+function startCountdown(){
+  let year = new Date().getFullYear();
+  let target = new Date(`February 14, ${year} 00:00:00`).getTime();
+  if (Date.now() > target) {
+    target = new Date(`February 14, ${year + 1} 00:00:00`).getTime();
   }
-  if (endX > startX + 50) {
-    prev();   // swipe right → previous image
-  }
+
+  setInterval(() => {
+    const d = target - Date.now();
+    const days = Math.floor(d / 86400000);
+    const hrs  = Math.floor((d / 3600000) % 24);
+    const mins = Math.floor((d / 60000) % 60);
+    const secs = Math.floor((d / 1000) % 60);
+
+    document.getElementById("timer").innerHTML =
+      `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
+  }, 1000);
 }
-  .lightbox{
-  touch-action: pan-y;
+startCountdown();
+
+/* ================= PROMO ================= */
+setTimeout(() => {
+  if (localStorage.getItem("promoDate") !== new Date().toDateString()) {
+    document.getElementById("promo").style.display = "flex";
+  }
+}, 10000);
+
+function closePromo(){
+  localStorage.setItem("promoDate", new Date().toDateString());
+  document.getElementById("promo").style.display = "none";
 }
 
-  /* ================= VALENTINE COUNTDOWN ================= */
-  function startCountdown(){
-    let year = new Date().getFullYear();
-    let target = new Date(`February 14, ${year} 00:00:00`).getTime();
+function tryLuck(){
+  localStorage.setItem("promoDate", new Date().toDateString());
+  const roll = Math.random() * 100;
+  const box = document.getElementById("promoBox");
 
-    if (Date.now() > target) {
-      target = new Date(`February 14, ${year + 1} 00:00:00`).getTime();
-    }
+  let percent = roll > 95 ? 20 : roll > 85 ? 15 : roll > 50 ? 10 : 0;
 
-    setInterval(() => {
-      const now = Date.now();
-      const d = target - now;
-
-      const days = Math.floor(d / (1000 * 60 * 60 * 24));
-      const hrs  = Math.floor((d / (1000 * 60 * 60)) % 24);
-      const mins = Math.floor((d / (1000 * 60)) % 60);
-      const secs = Math.floor((d / 1000) % 60);
-
-      document.getElementById("timer").innerHTML =
-        `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
-    }, 1000);
+  if (!percent) {
+    box.innerHTML = `<h3>😔 Better luck next time</h3>
+    <button class="btn secondary" onclick="closePromo()">Close</button>`;
+    return;
   }
-  startCountdown();
 
-  /* ================= PROMO POPUP ================= */
-  setTimeout(() => {
-    const today = new Date().toDateString();
-    if (localStorage.getItem("promoDate") !== today) {
-      document.getElementById("promo").style.display = "flex";
-    }
-  }, 10000);
-
-  window.closePromo = function(){
-    localStorage.setItem("promoDate", new Date().toDateString());
-    document.getElementById("promo").style.display = "none";
-  };
-
-  window.tryLuck = function(){
-    localStorage.setItem("promoDate", new Date().toDateString());
-
-    const roll = Math.random() * 100;
-    const box  = document.getElementById("promoBox");
-    const now  = new Date().toLocaleString();
-
-    let percent = 0;
-    if (roll > 95) percent = 20;
-    else if (roll > 85) percent = 15;
-    else if (roll > 50) percent = 10;
-
-    if (percent === 0) {
-      box.innerHTML = `
-        <h3>😔 Better luck next time</h3>
-        <p>Try again tomorrow 💕</p>
-        <button class="btn secondary" onclick="closePromo()">Close</button>
-      `;
-      return;
-    }
-
-    const code = "PC-" + Math.random().toString(36).substring(2,8).toUpperCase();
-
-    box.innerHTML = `
-      <h3>🎉 Congratulations!</h3>
-      <h2>${percent}% OFF</h2>
-      <div class="code">${code}</div>
-      <p>${now}</p>
-      <p>📸 Screenshot & send on Messenger</p>
-    `;
-  };
-
-});
+  box.innerHTML = `<h3>🎉 Congratulations!</h3>
+  <h2>${percent}% OFF</h2>
+  <p>📸 Screenshot & send on Messenger</p>`;
+}
 </script>
 
 </body>
