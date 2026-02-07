@@ -491,26 +491,39 @@ document.getElementById("lightbox").addEventListener("touchend",e=>{
 });
 document.getElementById("lightbox").onclick=e=>{if(e.target.id==="lightbox")e.currentTarget.style.display="none";};
 
-/* COUNTDOWN */
-const target=new Date(new Date().getFullYear(),1,14).getTime();
-setInterval(()=>{
-  const now=new Date().getTime(),d=target-now;
-  if(d>0){
-    const days=Math.floor(d/(1000*60*60*24));
-    const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-    const mins=Math.floor((d%(1000*60*60))/(1000*60));
-    const secs=Math.floor((d%(1000*60))/1000);
-    document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
-  }
-},1000);
+function startValentineCountdown(){
+  let year = new Date().getFullYear();
+  let target = new Date(`February 14, ${year} 00:00:00`).getTime();
 
-/* PROMO AFTER 10 SECONDS */
-setTimeout(()=>{
-  const today=new Date().toDateString();
-  if(localStorage.getItem("promoDate")!==today){
-    document.getElementById("promo").style.display="flex";
+  // if Feb 14 already passed, use next year
+  if (Date.now() > target) {
+    target = new Date(`February 14, ${year + 1} 00:00:00`).getTime();
   }
-},10000);
+
+  setInterval(() => {
+    const now = Date.now();
+    const d = target - now;
+
+    const days = Math.floor(d / (1000 * 60 * 60 * 24));
+    const hrs = Math.floor((d / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((d / (1000 * 60)) % 60);
+    const secs = Math.floor((d / 1000) % 60);
+
+    document.getElementById("timer").innerHTML =
+      `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
+  }, 1000);
+}
+
+startValentineCountdown();
+
+setTimeout(() => {
+  const today = new Date().toDateString();
+  const tried = localStorage.getItem("promoTried");
+
+  if (tried !== today) {
+    document.getElementById("promo").style.display = "flex";
+  }
+}, 10000);
 
 function closePromo(){
   localStorage.setItem("promoDate",new Date().toDateString());
