@@ -376,6 +376,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  let startX = 0;
+let endX = 0;
+
+const lightbox = document.getElementById("lightbox");
+
+lightbox.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+lightbox.addEventListener("mousedown", e => {
+  startX = e.clientX;
+});
+
+lightbox.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  if (endX < startX - 50) {
+    next();   // swipe left → next image
+  }
+  if (endX > startX + 50) {
+    prev();   // swipe right → previous image
+  }
+}
+  .lightbox{
+  touch-action: pan-y;
+}
+
   /* ================= VALENTINE COUNTDOWN ================= */
   function startCountdown(){
     let year = new Date().getFullYear();
