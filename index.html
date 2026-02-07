@@ -309,75 +309,112 @@ z-index:3000;justify-content:center;align-items:center;}
     <button class="btn secondary" onclick="closePromo()">Maybe later</button>
   </div>
 </div>
-
 <script>
-let images=[],index=0,startX=0;
+document.addEventListener("DOMContentLoaded", function () {
 
-function toggle(id){
-  const el=document.getElementById(id);
-  el.style.display=el.style.display==="block"?"none":"block";
-}
-function zoom(img){
-  images=[...img.parentElement.querySelectorAll("img")];
-  index=images.indexOf(img);
-  document.getElementById("zoomed").src=img.src;
-  document.getElementById("lightbox").style.display="flex";
-}
-function next(){index=(index+1)%images.length;document.getElementById("zoomed").src=images[index].src;}
-function prev(){index=(index-1+images.length)%images.length;document.getElementById("zoomed").src=images[index].src;}
-document.getElementById("lightbox").onclick=e=>{if(e.target.id==="lightbox")e.currentTarget.style.display="none";};
+  /* ================= TOGGLE VIEW CHOICES ================= */
+  window.toggle = function(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+  };
 
-// ✅ FIXED COUNTDOWN
-function startCountdown(){
-  let year=new Date().getFullYear();
-  let target=new Date(`February 14, ${year} 00:00:00`).getTime();
-  if(Date.now()>target) target=new Date(`February 14, ${year+1} 00:00:00`).getTime();
-  setInterval(()=>{
-    let d=target-Date.now();
-    let days=Math.floor(d/86400000);
-    let hrs=Math.floor(d/3600000)%24;
-    let mins=Math.floor(d/60000)%60;
-    let secs=Math.floor(d/1000)%60;
-    document.getElementById("timer").innerHTML=`💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
-  },1000);
-}
-startCountdown();
+  /* ================= IMAGE ZOOM ================= */
+  let images = [], index = 0;
 
-// ✅ FIXED PROMO (10 seconds, once per day)
-setTimeout(()=>{
-  const today=new Date().toDateString();
-  if(localStorage.getItem("promoDate")!==today){
-    document.getElementById("promo").style.display="flex";
+  window.zoom = function(img){
+    images = Array.from(img.parentElement.querySelectorAll("img"));
+    index = images.indexOf(img);
+    document.getElementById("zoomed").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+  };
+
+  window.next = function(){
+    index = (index + 1) % images.length;
+    document.getElementById("zoomed").src = images[index].src;
+  };
+
+  window.prev = function(){
+    index = (index - 1 + images.length) % images.length;
+    document.getElementById("zoomed").src = images[index].src;
+  };
+
+  document.getElementById("lightbox").addEventListener("click", e => {
+    if (e.target.id === "lightbox") {
+      e.currentTarget.style.display = "none";
+    }
+  });
+
+  /* ================= VALENTINE COUNTDOWN ================= */
+  function startCountdown(){
+    let year = new Date().getFullYear();
+    let target = new Date(`February 14, ${year} 00:00:00`).getTime();
+
+    if (Date.now() > target) {
+      target = new Date(`February 14, ${year + 1} 00:00:00`).getTime();
+    }
+
+    setInterval(() => {
+      const now = Date.now();
+      const d = target - now;
+
+      const days = Math.floor(d / (1000 * 60 * 60 * 24));
+      const hrs  = Math.floor((d / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((d / (1000 * 60)) % 60);
+      const secs = Math.floor((d / 1000) % 60);
+
+      document.getElementById("timer").innerHTML =
+        `💝 ${days}d ${hrs}h ${mins}m ${secs}s`;
+    }, 1000);
   }
-},10000);
+  startCountdown();
 
-function closePromo(){
-  localStorage.setItem("promoDate",new Date().toDateString());
-  document.getElementById("promo").style.display="none";
-}
+  /* ================= PROMO POPUP ================= */
+  setTimeout(() => {
+    const today = new Date().toDateString();
+    if (localStorage.getItem("promoDate") !== today) {
+      document.getElementById("promo").style.display = "flex";
+    }
+  }, 10000);
 
-function tryLuck(){
-  localStorage.setItem("promoDate",new Date().toDateString());
-  const roll=Math.random()*100;
-  const box=document.getElementById("promoBox");
-  const now=new Date().toLocaleString();
+  window.closePromo = function(){
+    localStorage.setItem("promoDate", new Date().toDateString());
+    document.getElementById("promo").style.display = "none";
+  };
 
-  let percent=roll>95?20:roll>85?15:roll>50?10:0;
+  window.tryLuck = function(){
+    localStorage.setItem("promoDate", new Date().toDateString());
 
-  if(percent===0){
-    box.innerHTML=`<h3>😔 Better luck next time</h3><p>Try again tomorrow 💕</p>`;
-    return;
-  }
+    const roll = Math.random() * 100;
+    const box  = document.getElementById("promoBox");
+    const now  = new Date().toLocaleString();
 
-  const code="PC-"+Math.random().toString(36).substring(2,8).toUpperCase();
-  box.innerHTML=`
-    <h3>🎉 Congratulations!</h3>
-    <h2>${percent}% OFF</h2>
-    <div class="code">${code}</div>
-    <p>${now}</p>
-    <p>Screenshot & send on Messenger</p>
-  `;
-}
+    let percent = 0;
+    if (roll > 95) percent = 20;
+    else if (roll > 85) percent = 15;
+    else if (roll > 50) percent = 10;
+
+    if (percent === 0) {
+      box.innerHTML = `
+        <h3>😔 Better luck next time</h3>
+        <p>Try again tomorrow 💕</p>
+        <button class="btn secondary" onclick="closePromo()">Close</button>
+      `;
+      return;
+    }
+
+    const code = "PC-" + Math.random().toString(36).substring(2,8).toUpperCase();
+
+    box.innerHTML = `
+      <h3>🎉 Congratulations!</h3>
+      <h2>${percent}% OFF</h2>
+      <div class="code">${code}</div>
+      <p>${now}</p>
+      <p>📸 Screenshot & send on Messenger</p>
+    `;
+  };
+
+});
 </script>
 
 </body>
